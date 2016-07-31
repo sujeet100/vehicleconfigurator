@@ -1,0 +1,7 @@
+spring:
+    application:
+        name: VehicleConfigurator
+
+server:
+    port: 9000
+    contextPath: /configurator

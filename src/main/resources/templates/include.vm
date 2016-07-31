@@ -1,0 +1,38 @@
+<script src="./bower_components/jquery/dist/jquery.js"></script>
+<script src="./app/scripts/lib/jquery.counterup.min.js"></script>
+<script src="./app/scripts/lib/jquery.easing.min.js"></script>
+<script src="./app/scripts/lib/modernizr-2.6.2.min.js"></script>
+<script src="./app/scripts/lib/jquery.shuffle.min.js"></script>
+<script src="./app/scripts/lib/scrolling-nav.js"></script>
+<script src="./app/scripts/lib/smoothscroll.min.js"></script>
+<script src="./app/scripts/lib/wow.min.js"></script>
+
+<!-- REVOLUTION Slider  -->
+<script type="text/javascript" src="./app/vendor/rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
+<script type="text/javascript" src="./app/vendor/rs-plugin/js/jquery.themepunch.revolution.js"></script>
+
+<!-- mmenu -->
+<script type="text/javascript" src="./app/vendor/mmenu/js/jquery.mmenu.min.js"></script>
+
+<!-- Owl Carosel -->
+<script src="./app/vendor/owl/js/owl.carousel.min.js"></script>
+
+<!-- waypoints JS-->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+<script src="./app/scripts/lib/script.js"></script>
+
+
+<script src="./bower_components/angular/angular.js"></script>
+<script src="./bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="./bower_components/angular-animate/angular-animate.js"></script>
+<script src="./bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="./bower_components/angular-resource/angular-resource.js"></script>
+<script src="./bower_components/angular-route/angular-route.js"></script>
+<script src="./bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="./bower_components/angular-touch/angular-touch.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="./app/app.js"></script>
+<script src="./app/home/controller/HomeCtrl.js"></script>
