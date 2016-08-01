@@ -14,5 +14,4 @@ build/
 target
 node_modules
 npm-debug.log
-dist
 .tmp
