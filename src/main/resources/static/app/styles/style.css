@@ -2223,3 +2223,15 @@ transition          : all ease 200ms;
     color       : #ffffff;  
 }
 
+.configure-btn {
+    border: 1px solid rgb(233, 94, 29);
+    transition: all 0s ease 0s;
+    min-height: 0px;
+    min-width: 0px;
+    line-height: 22px;
+    margin: 0px;
+    padding: 10px 35px;
+    letter-spacing: 2px;
+    font-size: 16px;
+    background-color: rgb(232, 71, 0);
+}
