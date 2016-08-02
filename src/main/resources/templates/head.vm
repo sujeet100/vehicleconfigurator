@@ -24,6 +24,7 @@
 <link type="text/css" rel="stylesheet" href="./app/vendor/mmenu/css/jquery.mmenu.css" />
 
 <link href="./bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="./bower_components/angular-rangeslider/angular.rangeSlider.css" rel="stylesheet">
 <link href="./app/styles/hover.css" rel="stylesheet">
 <link href="./app/styles/normalize.css" rel="stylesheet">
 <link href="./app/styles/animate.css" rel="stylesheet">

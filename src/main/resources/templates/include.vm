@@ -25,6 +25,7 @@
 <script src="./bower_components/angular/angular.js"></script>
 <script src="./bower_components/bootstrap/dist/js/bootstrap.js"></script>
 <script src="./bower_components/underscore/underscore-min.js"></script>
+<script src="./bower_components/angular-rangeslider/angular.rangeSlider.js"></script>
 <script src="./bower_components/angular-animate/angular-animate.js"></script>
 <script src="./bower_components/angular-cookies/angular-cookies.js"></script>
 <script src="./bower_components/angular-resource/angular-resource.js"></script>
@@ -38,3 +39,6 @@
 <script src="./app/app.js"></script>
 <script src="./app/home/controller/HomeCtrl.js"></script>
 <script src="./app/home/service/MakeService.js"></script>
+<script src="./app/configurator/powertrain/controller/PowertrainCtrl.js"></script>
+<script src="./app/configurator/powertrain/service/PowertrainService.js"></script>
+<script src="./app/configurator/powertrain/Powertrain.js"></script>

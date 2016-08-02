@@ -11,20 +11,27 @@
 angular
   .module('configuratorApp', [
     'ngAnimate',
+    'ui-rangeSlider',
     'ngCookies',
     'ngResource',
     'ngRoute',
     'ngSanitize',
     'ngTouch'
   ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, $httpProvider) {
+    $httpProvider.defaults.cache = true;
+
     $routeProvider
       .when('/:make', {
         templateUrl: 'app/home/view/home.html',
         controller: 'HomeCtrl'
       })
+      .when('/:make/:model/:year/configuration/powertrain', {
+          templateUrl: 'app/configurator/powertrain/view/powertrain.html',
+          controller: 'PowertrainCtrl'
+      })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/mazda'
       });
   })
   .run(function($rootScope){

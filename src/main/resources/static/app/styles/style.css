@@ -2235,3 +2235,15 @@ transition          : all ease 200ms;
     font-size: 16px;
     background-color: rgb(232, 71, 0);
 }
+
+
+/*Custom CSS*/
+#powertrain .configuration-steps h1, #powertrain .configuration-steps .slider {
+    padding-bottom: 20px;
+}
+
+#powertrain .configuration-steps .filter-section{
+    background-color: #EFEFEF;
+    padding: 20px;
+    margin-left: 20px;
+}
