@@ -60,7 +60,7 @@
             </div>
 
             <div class="slider">
-                <div range-slider min="0" max="100" model-min="10" model-max="90"></div>   
+                <div on-handle-up="filterOptions()" range-slider attach-handle-values="true" show-values="true" filter="currency:'$':0" step="100" min="filtersSelections.minPrice" max="filtersSelections.maxPrice" model-min="budget.min" model-max="budget.max"></div>
             </div>
 
             <div class="filter-configuration-steps">
