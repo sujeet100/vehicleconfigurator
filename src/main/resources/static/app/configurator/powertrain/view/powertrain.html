@@ -68,27 +68,27 @@
                     <div class="col-xs-3 filter-section">
                         <h2 class="filter-header">Fuel Type</h2>
                         <ul class="list-unstyled">
-                            <li  ng-repeat="type in filtersSelections.fuelType">
-                                <input type="checkbox" value="{{type}}" />
-                                <span>{{type}}</span>
+                            <li  ng-repeat="fuelType in filtersSelections.fuelType">
+                                <input type="checkbox" value="{{fuelType.value}}" ng-disabled="!fuelType.enable"/>
+                                <span>{{fuelType.value}}</span>
                             </li>
                         </ul>
                     </div>
                     <div class="col-xs-3 filter-section">
                         <h2>Engine Capacity</h2>
                         <ul class="list-unstyled">
-                            <li  ng-repeat="type in filtersSelections.engineCapacity">
-                                <input type="checkbox" value="{{type}}" />
-                                <span>{{type}}</span>
+                            <li  ng-repeat="engineCapacity in filtersSelections.engineCapacity">
+                                <input type="checkbox" value="{{engineCapacity.value}}" ng-disabled="!engineCapacity.enable"/>
+                                <span>{{engineCapacity.value}}</span>
                             </li>
                         </ul>
                     </div>
                     <div class="col-xs-3 filter-section">
                         <h2>Transmission</h2>
                         <ul class="list-unstyled">
-                            <li  ng-repeat="type in filtersSelections.transmission">
-                                <input type="checkbox" value="{{type}}"/>
-                                <span>{{type}}</span>
+                            <li  ng-repeat="transmission in filtersSelections.transmission">
+                                <input type="checkbox" value="{{transmission.value}}" ng-disabled="!transmission.enable"/>
+                                <span>{{transmission.value}}</span>
                             </li>
                         </ul>
                     </div>

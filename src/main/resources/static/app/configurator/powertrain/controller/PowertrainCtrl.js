@@ -37,10 +37,10 @@ angular.module('configuratorApp')
 
 
             _.each(powertrains, function(powertrain){
-                var types = ["fuelType", "engineCapacity", "transmission"];
-                _.each(types, function(type){
-                    if(filtersSelections[type].indexOf(powertrain[type]) == -1){
-                        filtersSelections[type].push(powertrain[type]);
+                var dimensions = ["fuelType", "engineCapacity", "transmission"];
+                _.each(dimensions, function(dimension){
+                    if(!_.some(filtersSelections[dimension], function(e) { return e.value == powertrain[dimension]})) {
+                        filtersSelections[dimension].push({'value': powertrain[dimension], 'enable': true});
                     }
                 });
             });
