@@ -66,16 +66,33 @@ angular.module('configuratorApp')
                 return powertrain.price >= $scope.budget.min && powertrain.price <= $scope.budget.max;
             });
 
+            var newFiltersSelections = {
+                fuelType: [],
+                engineCapacity: [],
+                transmission: []
+            };
+
             _.each(filteredPowertrains, function(filteredPowertrain){
-                var types = ["fuelType", "engineCapacity", "transmission"];
-                _.each(types, function(type){
-                    if(filtersSelections[type].indexOf(powertrain[type]) == -1){
-                        filtersSelections[type].push(powertrain[type]);
+                var dimensions = ["fuelType", "engineCapacity", "transmission"];
+                _.each(dimensions, function(dimension){
+                    if(!_.some(newFiltersSelections[dimension], function(e) { return e.value == filteredPowertrain[dimension]})) {
+                        newFiltersSelections[dimension].push({'value': filteredPowertrain[dimension], 'enable': true});
                     }
                 });
             });
 
 
+            var dimensions = ["fuelType", "engineCapacity", "transmission"];
+            _.each(dimensions, function(dimension){
+                _.each($scope.filtersSelections[dimension], function(originalOption){
+                    if(_.some(newFiltersSelections[dimension], function(newOption) { return newOption.value == originalOption.value})) {
+                        originalOption.enable = true;
+                    }
+                    else {
+                        originalOption.enable = false;
+                    }
+                })
+             });
         }
 
   });
