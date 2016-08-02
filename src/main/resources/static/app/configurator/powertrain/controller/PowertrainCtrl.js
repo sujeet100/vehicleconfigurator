@@ -25,19 +25,21 @@ angular.module('configuratorApp')
             });
 
             var filtersSelections = {
-                fuelType: new Set(),
-                engineCapacity: new Set(),
-                transmission: new Set()
+                fuelType: [],
+                engineCapacity: [],
+                transmission: []
             };
 
             _.each(powertrains, function(powertrain){
-                filtersSelections.fuelType.add(powertrain.fuelType);
-                filtersSelections.engineCapacity.add(powertrain.engineCapacity);
-                filtersSelections.transmission.add(powertrain.transmission);
+                var types = ["fuelType", "engineCapacity", "transmission"];
+                _.each(types, function(type){
+                    if(filtersSelections[type].indexOf(powertrain[type]) == -1){
+                        filtersSelections[type].push(powertrain[type]);
+                    }
+                });
             });
 
-            console.log(filtersSelections.fuelType)
-
+            $scope.filtersSelections = filtersSelections;
         });
 
   });

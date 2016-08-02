@@ -11,6 +11,7 @@
 angular
   .module('configuratorApp', [
     'ngAnimate',
+    'ui-rangeSlider',
     'ngCookies',
     'ngResource',
     'ngRoute',

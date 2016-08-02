@@ -1,9 +1,9 @@
 <div class="loader"></div>
-<div class="main" id="home">
+<div class="main" id="powertrain">
 
     <!-- slider -->
     <header  class="header-part">
-        <div id="home" class="wrapper">
+        <div id="powertrain" class="wrapper">
             <!-- Fixed navbar -->
             <div class="navi navbar-default" role="navigation">
                 <div class="container">
@@ -39,9 +39,9 @@
                                 <div class="search-open" style="display:none;" >
                                     <div class="input-group animated fadeInDown" >
                                         <input type="text" class="form-control" placeholder="Search">
-                <span class="input-group-btn">
-                  <button class="btn-u" type="button">Go</button>
-                </span>
+                                        <span class="input-group-btn">
+                                          <button class="btn-u" type="button">Go</button>
+                                        </span>
                                     </div>
                                 </div>
                             </li>
@@ -53,9 +53,47 @@
         </div>
     </header>
     <!-- OUR TEAM -->
-    <section id="team" class="our-team section-padding">
+    <section id="team" class="configuration-steps section-padding">
         <div class="container">
-            <h1>Config step 1</h1>
+            <div class="header">
+                <h1>Config step 1</h1>
+            </div>
+
+            <div class="slider">
+                <div range-slider min="0" max="100" model-min="10" model-max="90"></div>   
+            </div>
+
+            <div class="filter-configuration-steps">
+                <div class="row">
+                    <div class="col-xs-3 filter-section">
+                        <h2 class="filter-header">Fuel Type</h2>
+                        <ul class="list-unstyled">
+                            <li  ng-repeat="type in filtersSelections.fuelType">
+                                <input type="checkbox" value="{{type}}" />
+                                <span>{{type}}</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-3 filter-section">
+                        <h2>Engine Capacity</h2>
+                        <ul class="list-unstyled">
+                            <li  ng-repeat="type in filtersSelections.engineCapacity">
+                                <input type="checkbox" value="{{type}}" />
+                                <span>{{type}}</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-3 filter-section">
+                        <h2>Transmission</h2>
+                        <ul class="list-unstyled">
+                            <li  ng-repeat="type in filtersSelections.transmission">
+                                <input type="checkbox" value="{{type}}"/>
+                                <span>{{type}}</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div><!-- container -->
     </section><!-- our team -->
 
