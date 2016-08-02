@@ -38,3 +38,6 @@
 <script src="./app/app.js"></script>
 <script src="./app/home/controller/HomeCtrl.js"></script>
 <script src="./app/home/service/MakeService.js"></script>
+<script src="./app/configurator/powertrain/controller/PowertrainCtrl.js"></script>
+<script src="./app/configurator/powertrain/service/PowertrainService.js"></script>
+<script src="./app/configurator/powertrain/Powertrain.js"></script>
