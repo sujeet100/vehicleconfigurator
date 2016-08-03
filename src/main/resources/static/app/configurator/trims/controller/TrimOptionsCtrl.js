@@ -9,6 +9,9 @@
  */
 angular.module('configuratorApp')
   .controller('TrimOptionsCtrl', function ($scope, $routeParams, $rootScope, PowertrainService, $location) {
+        $scope.make = $routeParams.make;
+        $scope.modelNiceName = $routeParams.model;
+        $scope.modelYear = $routeParams.year;
         $scope.trims = [];
         _.each($rootScope.trimOptions, function(option){
             if(!_.some($scope.trims, function(e){return e.name == option.trim})) {
@@ -20,14 +23,11 @@ angular.module('configuratorApp')
         });
 
         $scope.next = function() {
-            var trimVariants = {};
-            _.each($scope.trims, function(trim){
-                trimVariants[trim.name] = _.filter($rootScope.trimOptions, function(option) {
-                    return option.trim == trim.name;
-                });
+            var selectedTrim = $scope.trims[0].name
+            $rootScope.trimVariants = _.filter($rootScope.trimOptions, function(option) {
+                return option.trim == selectedTrim;
             });
             $rootScope.trimOptions = $rootScope.trimOptions;
-            $rootScope.trimVariants = trimVariants;
             $location.path("/" + $scope.make + "/" + $scope.modelNiceName + "/" + $scope.modelYear + "/configuration/trimvariant")
         };
 

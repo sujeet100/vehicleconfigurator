@@ -1,4 +1,3 @@
-<div class="loader"></div>
 <div class="main" id="powertrain">
 
     <!-- slider -->
@@ -61,8 +60,17 @@
 
             <div class="filter-configuration-steps">
                 <div class="row">
-                    Options
-                    {{trimVariants}}
+                    {{variants}}
+                    <div class="sidebar">
+                        <div class="list-group">
+                            <div class="list-group-item" ng-repeat="variant in variants">
+                                <input type="radio" ng-model="selectedVariant.styleId" value="{{variant.styleId}}">
+                                <spam>{{variant.engineName}}</spam>
+                                <spam>From {{variant.price}}</spam>
+                                <div>{{variant.description}}</div>
+                            </div>
+                        </div><!-- /.list-group -->
+                    </div><!-- sidebar -->
                 </div>
                 <div class="text-right">
                     <button type="button" class="btn btn-danger" ng-click="next();"><i class="fa fa-link"></i>Continue</button>

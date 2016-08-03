@@ -28,6 +28,8 @@ angular.module('configuratorApp')
                 powerTrain.options = style.options;
                 powerTrain.styleId = style.id;
                 powerTrain.trim = style.trim;
+                powerTrain.drivenWheels = style.drivenWheels;
+                powerTrain.numOfDoors = style.numOfDoors;
                 return powerTrain;
             });
             $scope.powertrains = powertrains;

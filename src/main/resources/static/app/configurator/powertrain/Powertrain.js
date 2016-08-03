@@ -8,4 +8,6 @@ var Powertrain = function() {
     this.engine;
     this.colors;
     this.trim;
+    this.drivenWheels;
+    this.numOfDoors;
 }
