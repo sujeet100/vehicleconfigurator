@@ -41,11 +41,14 @@ angular.module('configuratorApp')
         });
 
         $scope.next = function() {
-            var selectedTrim = $scope.trims[0].name
+            var selectedTrim = _.find($scope.trims,function(trim){
+                return trim.styleId == $scope.trimselected.styleid;
+            }).name;
             $rootScope.trimVariants = _.filter($rootScope.trimOptions, function(option) {
                 return option.trim == selectedTrim;
             });
             $rootScope.trimOptions = $rootScope.trimOptions;
+            $rootScope.selectedTrim = selectedTrim;
             $location.path("/" + $scope.make + "/" + $scope.modelNiceName + "/" + $scope.modelYear + "/configuration/trimvariant")
         };
 
