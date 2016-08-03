@@ -8,7 +8,7 @@
  * Controller of the angularappApp
  */
 angular.module('configuratorApp')
-  .controller('PowertrainCtrl', function ($scope, $routeParams, $rootScope, PowertrainService) {
+  .controller('PowertrainCtrl', function ($scope, $routeParams, $rootScope, PowertrainService, $location) {
     $scope.make = $routeParams.make;
     $scope.modelNiceName = $routeParams.model;
     $scope.modelYear = $routeParams.year;
@@ -23,6 +23,11 @@ angular.module('configuratorApp')
                 powerTrain.engineCapacity = style.engine.size;
                 powerTrain.transmission = style.transmission.transmissionType;
                 powerTrain.price = style.price.baseMSRP;
+                powerTrain.engine = style.engine;
+                powerTrain.colors = style.colors;
+                powerTrain.options = style.options;
+                powerTrain.styleId = style.id;
+                powerTrain.trim = style.trim;
                 return powerTrain;
             });
             $scope.powertrains = powertrains;
@@ -155,5 +160,12 @@ angular.module('configuratorApp')
 
       $scope.transmissionSelected = {};
       $scope.transmissionSelected.values = [];
+
+      $scope.next = function() {
+        $rootScope.trimOptions = _.sortBy($scope.powertrains, function(powertrain) {
+            return powertrain.price;
+        });
+        $location.path("/" + $scope.make + "/" + $scope.modelNiceName + "/" + $scope.modelYear + "/configuration/trims")
+      };
 
   });

@@ -3,4 +3,9 @@ var Powertrain = function() {
     this.engineCapacity;
     this.transmission;
     this.price;
+    this.options;
+    this.styleId;
+    this.engine;
+    this.colors;
+    this.trim;
 }

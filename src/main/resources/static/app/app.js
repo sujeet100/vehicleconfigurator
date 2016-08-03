@@ -31,6 +31,10 @@ angular
           templateUrl: 'app/configurator/powertrain/view/powertrain.html',
           controller: 'PowertrainCtrl'
       })
+      .when('/:make/:model/:year/configuration/trims', {
+          templateUrl: 'app/configurator/trims/view/trimoptions.html',
+          controller: 'TrimOptionsCtrl'
+      })
       .otherwise({
         redirectTo: '/mazda'
       });
