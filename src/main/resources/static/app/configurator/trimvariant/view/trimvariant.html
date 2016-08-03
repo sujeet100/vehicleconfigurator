@@ -57,6 +57,7 @@
             <div class="header">
                 <h1>Config step 1</h1>
                 <h2>{{make}} {{modelNiceName}} {{selectedTrim}}</h2>
+                <h2 ng-if="variant">From {{variant.price}}</h2>
             </div>
 
             <div class="variant-car-image">
@@ -66,7 +67,7 @@
                     <div class="sidebar">
                         <div class="list-group">
                             <div class="list-group-item" ng-repeat="variant in variants">
-                                <input type="radio" ng-model="selectedVariant.styleId" value="{{variant.styleId}}">
+                                <input type="radio" ng-model="selectedVariant.styleId" ng-change="variantChanged();" value="{{variant.styleId}}">
                                 <spam>{{variant.engineName}}</spam>
                                 <spam>From {{variant.price}}</spam>
                                 <div>{{variant.description}}</div>
