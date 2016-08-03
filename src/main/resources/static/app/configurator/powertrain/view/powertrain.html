@@ -62,7 +62,10 @@
             <div class="slider">
                 <div on-handle-up="filterOptions()" range-slider attach-handle-values="true" show-values="true" filter="currency:'$':0" step="100" min="filtersSelections.minPrice" max="filtersSelections.maxPrice" model-min="budget.min" model-max="budget.max"></div>
             </div>
-
+            <div title="Tooltip on image" class="">
+                <img src="app/images/isample.png" ng-mouseover="fun1()" ng-init="count=0" ng-mousemove="fun2($event)" class="masterTooltip" title="This is Hover" style="width:2em; height:2em;">
+                </img>
+            </div>
             <div class="filter-configuration-steps">
                 <div class="row">
                     <div class="col-xs-3 filter-section">
@@ -70,7 +73,8 @@
                         <ul class="list-unstyled">
                             <li  ng-repeat="fuelType in filtersSelections.fuelType">
                                 <input type="checkbox" value="{{fuelType.value}}" ng-disabled="!fuelType.enable"/>
-                                <span>{{fuelType.value}}</span>
+                                <span>{{fuelType.value}}</span>&nbsp &nbsp
+                                <img ng-if="!fuelType.enable" src="app/images/isample.png" ng-mouseover="fun1()" ng-mousemove="fun2($event)" class="masterTooltip tooltip" title="This Criteria is not compatible with price range chosen.To reactivate, Please move again the price slider." style="width:1em; height:1em;"></img>
                             </li>
                         </ul>
                     </div>
@@ -79,7 +83,8 @@
                         <ul class="list-unstyled">
                             <li  ng-repeat="engineCapacity in filtersSelections.engineCapacity">
                                 <input type="checkbox" value="{{engineCapacity.value}}" ng-disabled="!engineCapacity.enable"/>
-                                <span>{{engineCapacity.value}}</span>
+                                <span>{{engineCapacity.value}}</span>&nbsp &nbsp
+                                <img ng-if="!engineCapacity.enable" src="app/images/isample.png" ng-mouseover="fun1()" ng-mousemove="fun2($event)" class="masterTooltip " title="This Criteria is not compatible with price range chosen.To reactivate, Please move again the price slider." style="width:1em; height:1em;"></img>
                             </li>
                         </ul>
                     </div>
@@ -88,7 +93,8 @@
                         <ul class="list-unstyled">
                             <li  ng-repeat="transmission in filtersSelections.transmission">
                                 <input type="checkbox" value="{{transmission.value}}" ng-disabled="!transmission.enable"/>
-                                <span>{{transmission.value}}</span>
+                                <span>{{transmission.value}}</span>&nbsp &nbsp
+                                <img ng-if="!transmission.enable" src="app/images/isample.png" ng-mouseover="iHoverEvent()" ng-mousemove="iMoveEvent($event)" class="masterTooltip" title="This Criteria is not compatible with price range chosen.To reactivate, Please move again the price slider." style="width:1em; height:1em;"></img>
                             </li>
                         </ul>
                     </div>
