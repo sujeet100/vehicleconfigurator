@@ -8,7 +8,7 @@
  * Controller of the angularappApp
  */
 angular.module('configuratorApp')
-  .controller('TrimOptionsCtrl', function ($scope, $routeParams, $rootScope, PowertrainService, $location) {
+  .controller('TrimOptionsCtrl', function ($scope, $routeParams, $rootScope, PowertrainService, TrimoptionService, $location) {
         $scope.make = $routeParams.make;
         $scope.modelNiceName = $routeParams.model;
         $scope.modelYear = $routeParams.year;
@@ -18,6 +18,24 @@ angular.module('configuratorApp')
                 var trimOption = new TrimOption();
                 trimOption.name = option.trim;
                 trimOption.price = option.price;
+                trimOption.styleId = option.styleId;
+                TrimoptionService.getStyles(option.styleId)
+                    .success(function(response){
+                        var equipment = response.equipment;
+                        //console.log(equipment);
+                        var stylelist = ['Brake System', 'Drive Type', 'Security', 'Airbags'];
+                        _.each(equipment, function(e){
+                            if(stylelist.indexOf(e.name) != -1) {
+                                trimOption.equipmentstyles.push({
+                                    stylename: e.name,
+                                    stylevalue: e.attributes
+
+                                })
+                            }
+                        });
+                        console.log(trimOption.equipmentstyles);
+                    })
+
                 $scope.trims.push(trimOption);
             }
         });
@@ -30,5 +48,8 @@ angular.module('configuratorApp')
             $rootScope.trimOptions = $rootScope.trimOptions;
             $location.path("/" + $scope.make + "/" + $scope.modelNiceName + "/" + $scope.modelYear + "/configuration/trimvariant")
         };
+
+      $scope.trimselected = {};
+      $scope.trimselected.styleid = "";
 
   });
