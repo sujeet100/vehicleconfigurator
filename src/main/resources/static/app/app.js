@@ -16,7 +16,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'checklist-model'
   ])
   .config(function ($routeProvider, $httpProvider) {
     $httpProvider.defaults.cache = true;

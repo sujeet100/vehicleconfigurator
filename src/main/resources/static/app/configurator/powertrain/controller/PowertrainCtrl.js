@@ -13,6 +13,7 @@ angular.module('configuratorApp')
     $scope.modelNiceName = $routeParams.model;
     $scope.modelYear = $routeParams.year;
     $scope.budget = {};
+    $scope.CurrentModelLength = 0;
     PowertrainService.getStyles($scope.make, $scope.modelNiceName, $scope.modelYear)
         .success(function(response){
             var styles = response.styles;
@@ -25,6 +26,7 @@ angular.module('configuratorApp')
                 return powerTrain;
             });
             $scope.powertrains = powertrains;
+            $scope.CurrentModelLength = $scope.powertrains.length;
 
             var filtersSelections = {
                 fuelType: [],
@@ -60,11 +62,12 @@ angular.module('configuratorApp')
             $scope.filtersSelections = filtersSelections;
         });
 
-        $scope.filterOptions = function(){
+        $scope.filterOptionsOnPriceChange = function(){
 
             var filteredPowertrains = _.filter($scope.powertrains, function(powertrain){
                 return powertrain.price >= $scope.budget.min && powertrain.price <= $scope.budget.max;
             });
+
 
             var newFiltersSelections = {
                 fuelType: [],
@@ -93,6 +96,7 @@ angular.module('configuratorApp')
                     }
                 })
              });
+            $scope.CurrentModelLength = filteredPowertrains.length;
         }
         $scope.masterTooltip = "";
         $scope.iHoverEvent = function(){
@@ -120,5 +124,36 @@ angular.module('configuratorApp')
             tooltip.css({ top: mousey, left: mousex })
         };
 
+      $scope.filterOptionsOnDimensionChange = function() {
+          var filteredPowertrains = _.filter($scope.powertrains, function(powertrain){
+
+              if(powertrain.price >= $scope.budget.min && powertrain.price <= $scope.budget.max) {
+                  if(!$scope.fuelSelected.values.length || $scope.fuelSelected.values.indexOf(powertrain['fuelType']) != -1){
+                      if(!$scope.engineCapacitySelected.values.length || $scope.engineCapacitySelected.values.indexOf(powertrain['engineCapacity']) != -1){
+                          if(!$scope.transmissionSelected.values.length || $scope.transmissionSelected.values.indexOf(powertrain['transmission']) != -1) {
+                              return true;
+                          }
+                      }
+                  }
+              }
+              return false;
+          });
+
+          $scope.CurrentModelLength = filteredPowertrains.length;
+
+          var newFiltersSelections = {
+              fuelType: [],
+              engineCapacity: [],
+              transmission: []
+          };
+      }
+      $scope.fuelSelected = {};
+      $scope.fuelSelected.values = [];
+
+      $scope.engineCapacitySelected = {};
+      $scope.engineCapacitySelected.values = [];
+
+      $scope.transmissionSelected = {};
+      $scope.transmissionSelected.values = [];
 
   });
