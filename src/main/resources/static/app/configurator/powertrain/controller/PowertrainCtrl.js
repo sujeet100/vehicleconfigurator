@@ -103,6 +103,7 @@ angular.module('configuratorApp')
              });
             $scope.CurrentModelLength = filteredPowertrains.length;
         }
+
         $scope.masterTooltip = "";
         $scope.iHoverEvent = function(){
                 // Hover over code
@@ -114,15 +115,12 @@ angular.module('configuratorApp')
                 .appendTo('body')
                 .fadeIn('slow');
             $scope.masterTooltip = masterTooltip;
-            console.log('MH');
             };
 
         $scope.iMoveEvent = function(e) {
             var tooltip = angular.element(document.querySelector('tooltip'));
             $scope.masterTooltip.attr('title', $scope.masterTooltip.data('tipText'));
             tooltip.remove();
-            console.log('MHF');
-            console.log('MM');
             var mousex = e.pageX + 20; //Get X coordinates
             var mousey = e.pageY + 10; //Get Y coordinates
             var tooltip = angular.element(document.querySelector('tooltip'));
