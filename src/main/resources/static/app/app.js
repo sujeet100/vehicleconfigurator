@@ -35,6 +35,10 @@ angular
           templateUrl: 'app/configurator/trims/view/trimoptions.html',
           controller: 'TrimOptionsCtrl'
       })
+      .when('/:make/:model/:year/configuration/trimvariant', {
+        templateUrl: 'app/configurator/trimvariant/view/trimvariant.html',
+        controller: 'TrimVariantCtrl'
+      })
       .otherwise({
         redirectTo: '/mazda'
       });

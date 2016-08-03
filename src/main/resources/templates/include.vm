@@ -43,6 +43,7 @@
 <script src="./app/configurator/powertrain/controller/PowertrainCtrl.js"></script>
 <script src="./app/configurator/powertrain/service/PowertrainService.js"></script>
 <script src="./app/configurator/trims/controller/TrimOptionsCtrl.js"></script>
+<script src="./app/configurator/trimvariant/controller/TrimVariantCtrl.js"></script>
 <script src="./app/configurator/trims/service/TrimOptionsService.js"></script>
 <script src="./app/configurator/powertrain/Powertrain.js"></script>
 <script src="./app/configurator/trims/TrimOption.js"></script>
