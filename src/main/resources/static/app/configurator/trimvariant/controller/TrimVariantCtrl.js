@@ -8,11 +8,29 @@
  * Controller of the angularappApp
  */
 angular.module('configuratorApp')
-  .controller('TrimVariantCtrl', function ($scope, $routeParams, $rootScope, PowertrainService, $location) {
+  .controller('TrimVariantCtrl', function ($scope, $routeParams, $rootScope, PowertrainService, $location, MakeService) {
+
+        $scope.make = $routeParams.make;
+        $scope.modelNiceName = $routeParams.model;
+        $scope.modelYear = $routeParams.year;
 
        $scope.selectedVariant = {
         styleId: undefined
        };
+
+       MakeService.getCarImage($rootScope.trimVariants[0].styleId)
+       .success(function(images){
+           var carImages = _.find(images, function(image){
+               return image.subType == 'interior';
+           });
+
+           var carImage = _.find(carImages.photoSrcs, function(photoSrc){
+               return photoSrc.endsWith("600.jpg") || photoSrc.endsWith("500.jpg");
+           });
+
+           $scope.modelImage = $rootScope.imageBaseUrl + carImage;
+       });
+
       var getWheelDrive = function(driveName) {
           if(driveName == 'rear wheel drive') {
               return '2WD';
