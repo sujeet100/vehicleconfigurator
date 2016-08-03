@@ -2308,3 +2308,14 @@ div.ngrs-range-slider .ng-isolate-scope {
 .bs-wizard > .bs-wizard-step.disabled a.bs-wizard-dot{ pointer-events: none; }
 /*END Form Wizard*/
 
+.ngrs-range-slider .ngrs-join {
+    background-image: none;
+    background-color: #f54828;
+    border: none;
+}
+
+.ngrs-range-slider {
+    background-color: #fafafa;
+    border: none;
+}
+
