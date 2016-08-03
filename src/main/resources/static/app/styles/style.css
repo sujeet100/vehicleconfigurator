@@ -2248,14 +2248,36 @@ transition          : all ease 200ms;
     margin-left: 20px;
 }
 
+
 /* Custom CSS */
-.tooltip {
-    display:none;
-    position:absolute;
-    border:1px solid #333;
-    background-color:#161616;
-    border-radius:5px;
-    padding:10px;
-    color:#fff;
-    font-size:12px;
+
+.ngrs-range-slider .ngrs-handle  {
+    width: 50px;
+    height: 30px;
+    margin: -6px 0 0 -26px;
 }
+
+div.ngrs-range-slider .ng-isolate-scope {
+    width: 1400px;
+    height: 70px;
+}
+
+.ngrs-range-slider .ngrs-value {
+    color: #123456;
+    font-size: x-large;
+}
+
+.container .slider {
+    width: 1200px;
+    height: 40px;
+}
+
+#powertrain .configuration-steps .slider {
+    padding-bottom: 90px;
+    padding-top: 40px;
+}
+
+.filter-configuration-steps {
+    padding-top: 60px;
+}
+

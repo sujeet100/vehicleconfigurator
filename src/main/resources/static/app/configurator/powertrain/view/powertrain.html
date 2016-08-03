@@ -60,7 +60,11 @@
             </div>
 
             <div class="slider">
-                <div on-handle-up="filterOptionsOnPriceChange()" range-slider attach-handle-values="true" show-values="true" filter="currency:'$':0" step="100" min="filtersSelections.minPrice" max="filtersSelections.maxPrice" model-min="budget.min" model-max="budget.max"></div>
+                <div on-handle-up="filterOptionsOnPriceChange()" range-slider attach-handle-values="true" show-values="true" filter="currency:'$':0" step="100" min="filtersSelections.minPrice" max="filtersSelections.maxPrice" model-min="budget.min" model-max="budget.max"
+                     ng-mouseover="iHoverEvent()" ng-mousemove="iMoveEvent($event)" class="masterTooltip"
+                     title="On the road price includea VAT, 12 months Governmet Vehicle Excise Duty(determined by CO2 emission figure and fuel type) and Governement First Registration Fee .">
+
+                </div>
             </div>
             <div class="filter-configuration-steps">
                 <div class="row">

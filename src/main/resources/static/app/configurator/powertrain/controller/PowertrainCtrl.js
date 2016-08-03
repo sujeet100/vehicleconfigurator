@@ -113,7 +113,7 @@ angular.module('configuratorApp')
             var tooltip = angular.element(document.querySelector('tooltip'));
             tooltip.text(title)
                 .appendTo('body')
-                .fadeIn('slow');
+                .fadeIn('fast');
             $scope.masterTooltip = masterTooltip;
             };
 
@@ -165,5 +165,4 @@ angular.module('configuratorApp')
         });
         $location.path("/" + $scope.make + "/" + $scope.modelNiceName + "/" + $scope.modelYear + "/configuration/trims")
       };
-
   });
