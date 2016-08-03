@@ -74,10 +74,10 @@
                 <div class="row text-center">
 
                     <div class="col-md-3 col-sm-6 hero-feature" ng-repeat="trim in trims">
-                        <div class="thumbnail" ng-click="selectTrim(trim.styleId)" style="height: 500px; margin-top: 40px; overflow: scroll;">
+                        <div class="thumbnail" ng-click="selectTrim(trim.styleId)" style="height: 500px; margin-top: 40px; overflow: scroll;" ng-style="{ backgroundColor: trimselected.styleid == trim.styleId ? '#20dfdf' : 'white'}">
 
                             <label for="{{trim.styleId}}">
-                                <input type="checkbox" ng-model="trimselected.styleid" id="{{trim.styleId}}" ng-true-value="{{trim.styleId}}" ng-false-value="" style="float:left"/>
+                                <input ng-hide="true" type="checkbox" ng-model="trimselected.styleid" id="{{trim.styleId}}" ng-true-value="{{trim.styleId}}" ng-false-value="" style="float:left"/>
                                 <div class="caption" style="cursor: pointer">
                                     <h1>{{trim.name}}</h1>
                                     <p>Starting from {{trim.price | currency}}.</p>

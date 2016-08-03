@@ -34,6 +34,8 @@ angular.module('configuratorApp')
             });
             $scope.powertrains = powertrains;
             $scope.CurrentModelLength = $scope.powertrains.length;
+            $scope.filteredPowertrains = $scope.powertrains;
+
 
             var filtersSelections = {
                 fuelType: [],
@@ -104,6 +106,7 @@ angular.module('configuratorApp')
                 })
              });
             $scope.CurrentModelLength = filteredPowertrains.length;
+            $scope.filteredPowertrains = filteredPowertrains;
         }
 
         $scope.masterTooltip = "";
@@ -151,6 +154,8 @@ angular.module('configuratorApp')
               engineCapacity: [],
               transmission: []
           };
+
+          $scope.filteredPowertrains = filteredPowertrains;
       }
       $scope.fuelSelected = {};
       $scope.fuelSelected.values = [];
@@ -162,7 +167,7 @@ angular.module('configuratorApp')
       $scope.transmissionSelected.values = [];
 
       $scope.next = function() {
-        $rootScope.trimOptions = _.sortBy($scope.powertrains, function(powertrain) {
+        $rootScope.trimOptions = _.sortBy($scope.filteredPowertrains, function(powertrain) {
             return powertrain.price;
         });
         $location.path("/" + $scope.make + "/" + $scope.modelNiceName + "/" + $scope.modelYear + "/configuration/trims")
