@@ -41,6 +41,12 @@ angular.module('configuratorApp')
           }
 
       }
+
+      $scope.variantChanged = function() {
+        $scope.variant = _.find($rootScope.trimVariants, function(variant){
+            return variant.styleId = $scope.selectedVariant.styleId;
+        });
+      };
         $scope.variants = _.map($rootScope.trimVariants, function(variant){
             return {
                      styleId: variant.styleId,
