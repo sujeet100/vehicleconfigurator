@@ -2238,13 +2238,17 @@ transition          : all ease 200ms;
 
 
 /*Custom CSS*/
-#powertrain .configuration-steps h1, #powertrain .configuration-steps .slider {
+#powertrain .configuration-steps .slider {
     padding-bottom: 20px;
 }
 
 #powertrain .configuration-steps .filter-section{
     background-color: #EFEFEF;
     padding: 20px;
+    margin-left: 20px;
+}
+
+#powertrain .header {
     margin-left: 20px;
 }
 
@@ -2266,6 +2270,9 @@ div.ngrs-range-slider .ng-isolate-scope {
     color: #123456;
     font-size: x-large;
 }
+.ngrs-range-slider .ngrs-runner {
+    margin: 0 auto;
+}
 
 .container .slider {
     width: 1200px;
@@ -2273,12 +2280,12 @@ div.ngrs-range-slider .ng-isolate-scope {
 }
 
 #powertrain .configuration-steps .slider {
-    padding-bottom: 90px;
-    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-top: 20px;
 }
 
 .filter-configuration-steps {
-    padding-top: 60px;
+    padding-top: 25px;
 }
 
 .variant-car-image {
@@ -2319,3 +2326,29 @@ div.ngrs-range-slider .ng-isolate-scope {
     border: none;
 }
 
+.custom-loader {
+    margin: 0 auto;
+    width: 150px;
+    height: 150px;    
+    z-index: 99999999;
+    background: url('../images/page-loader.gif') 50% 50% no-repeat;
+}
+.footer-bottom {
+    margin-bottom: 0px;
+}
+#powertrain-subheader {
+    padding-top: 20px;
+}
+.continue {
+    margin-bottom: 10px;
+}
+.trim-sidebar {
+    padding: 0 20px;
+    overflow: scroll;
+}
+#trim-variant .header {
+    margin-bottom: 20px;
+}
+.icon-holder a:hover {
+    background-color: #f54828 !important;
+}

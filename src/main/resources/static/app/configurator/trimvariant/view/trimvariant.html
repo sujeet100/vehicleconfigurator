@@ -1,4 +1,4 @@
-<div class="main" id="powertrain">
+<div class="main" id="trim-variant">
 
     <!-- slider -->
     <header  class="header-part">
@@ -100,35 +100,42 @@
         </div>
     </header>
     <!-- OUR TEAM -->
-    <section id="team" class="configuration-steps section-padding">
+    <section id="team" class="configuration-steps" ng-if="variants.length > 0">
         <div class="container">
             <div class="header">
                 <h1>Style</h1>
                 <h2>{{make}} {{modelNiceName}} {{selectedTrim}}</h2>
-                <h2 ng-if="variant">From {{variant.price}}</h2>
+                <!-- <h2 ng-if="variant">From {{variant.price}}</h2> -->
             </div>
+            <div class="clearfix"></div>
 
-            <div class="variant-car-image">
-                <img class="img-responsive" src="{{modelImage}}" width="400px;"/>
-            </div>
-            <div>
-                    <div class="sidebar">
-                        <div class="list-group">
-                            <div class="list-group-item" ng-repeat="variant in variants">
+            <div class="row">
+                <div class="col-xs-6">
+                    <img class="img-responsive" ng-src="{{modelImage}}" ng-if="modelImage"/>
+                    <img class="img-responsive" ng-src="app/images/default_car.jpeg" ng-if="!modelImage"/>
+                </div>
+                <div class="col-xs-6">
+                    <div class="trim-sidebar">
+                        <ul class="list-unstyled">
+                            <li ng-repeat="variant in variants" class="list-group-item">
                                 <input type="radio" ng-model="selectedVariant.styleId" ng-change="variantChanged();" value="{{variant.styleId}}">
                                 <spam>{{variant.engineName}}</spam>
                                 <spam>From {{variant.price}}</spam>
                                 <div>{{variant.description}}</div>
-                            </div>
-                        </div><!-- /.list-group -->
+                            </li>
+                        </ul><!-- /.list-group -->
                     </div><!-- sidebar -->
-                <div class="text-right">
-                    <button type="button" class="btn btn-danger" ng-click="next();">Continue <i class="fa fa-chevron-right"></i></button>
                 </div>
             </div>
-            {{CurrentModelLength}}
+
+            <div class="clearfix"></div>
+            <div class="pull-right continue">
+                <button type="button" class="btn btn-danger" ng-click="next();">Continue <i class="fa fa-chevron-right"></i></button>
+            </div>
         </div><!-- container -->
     </section><!-- our team -->
+
+    <div class="custom-loader" ng-if="!variants"></div>
 
     <!-- footer -->
     <footer >

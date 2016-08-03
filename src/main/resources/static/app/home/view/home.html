@@ -1,5 +1,4 @@
-<div class="loader"></div>
-<div class="main" id="home">
+<div class="main">
 
     <!-- slider -->
     <header  class="header-part">
@@ -39,9 +38,9 @@
                                 <div class="search-open" style="display:none;" >
                                     <div class="input-group animated fadeInDown" >
                                         <input type="text" class="form-control" placeholder="Search">
-                <span class="input-group-btn">
-                  <button class="btn-u" type="button">Go</button>
-                </span>
+                                        <span class="input-group-btn">
+                                          <button class="btn-u" type="button">Go</button>
+                                        </span>
                                     </div>
                                 </div>
                             </li>
@@ -61,28 +60,30 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan venenatis lectus sed sollicitudin. Duis in odio ex. Sed elementum varius enim. In vel tincidunt lorem. Donec gravida felis vitae ipsum pharetra maximus.</p>
                 </div><!-- col-xs-12 -->
             </div><!-- row -->
-            <div class="row">
-                <div class="wow zoomIn col-xs-12 col-sm-6 col-md-3" ng-repeat="model in models">
-                    <div class="grid">
-                        <figure class="effect-duke">
-                            <img class="img-responsive" src="{{model.image}}" alt="img09">
-                            <figcaption>
-                                <div class="icon-holder">
-                                    <ul >
-                                        <li>
-                                            <a href="#/{{make}}/{{model.niceName}}/{{model.years[0].year}}/configuration/powertrain" class="btn btn-primary configure-btn">Configure</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="team-designation">
-                        <p>{{make}} {{model.name}}</p>
-                        <span>{{model.years[0].year}}</span>
-                    </div>
+
+            <div class="wow zoomIn col-xs-12 col-sm-6 col-md-3" ng-repeat="model in models" ng-if="models.length > 0">
+                <div class="grid">
+                    <figure class="effect-duke">
+                        <img class="img-responsive" ng-src="{{model.image}}" alt="{{make}} {{model.name}}" ng-if="model.image">
+                        <img class="img-responsive" ng-src="app/images/default_car.jpeg" alt="{{make}} {{model.name}}" ng-if="!model.image">
+                        <figcaption>
+                            <div class="icon-holder">
+                                <ul >
+                                    <li>
+                                        <a href="#/{{make}}/{{model.niceName}}/{{model.years[0].year}}/configuration/powertrain" class="btn btn-primary configure-btn">Configure</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </figcaption>
+                    </figure>
                 </div>
-            </div><!-- row -->
+                <div class="team-designation">
+                    <p>{{make}} {{model.name}}</p>
+                    <span>{{model.years[0].year}}</span>
+                </div>
+            </div>
+
+            <div class="custom-loader" ng-if="!models"></div>
         </div><!-- container -->
     </section><!-- our team -->
 
