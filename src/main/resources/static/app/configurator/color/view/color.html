@@ -1,0 +1,199 @@
+<body>
+<div class="main">
+    <header  class="header-part">
+        <div id="home">
+            <!-- Fixed navbar -->
+            <div class="navi navbar-default" role="navigation">
+                <div class="container">
+                    <div class="navbar-header page-scroll">
+                        <a href="#menu">
+                            <button type="button" data-effect="st-effect-1" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </a>
+                        <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="TechGut"></a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse pull-right hidden-xs">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li ><a class="page-scroll" href="index.html">Home</a></li>
+                            <li> <a class="page-scroll" href="index.html">about us</a></li>
+                            <li> <a class="page-scroll" href="index.html">services</a></li>
+                            <li> <a class="page-scroll" href="index.html">product</a></li>
+                            <li> <a class="page-scroll" href="index.html">team</a></li>
+                            <li class="dropdown"> <a class="page-scroll drop dropdown-toggle" ata-toggle="dropdown" role="button" aria-expanded="false" href="index.html">blog</a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="blog-full-width.html">full-width Blog</a></li>
+                                    <li><a href="#">sidebar blog</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="page-scroll" href="index.html">Contact</a></li>
+                            <!-- Search Block -->
+                            <li>
+                                <i class="search fa fa-search search-btn"></i>
+                                <div class="search-open" style="display:none;" >
+                                    <div class="input-group animated fadeInDown" >
+                                        <input type="text" class="form-control" placeholder="Search">
+                <span class="input-group-btn">
+                  <button class="btn-u" type="button">Go</button>
+                </span>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- End Search Block -->
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div><!-- End of Nav -->
+        </div>
+    </header>
+
+
+    <section class="blog-sidebar">
+        <div class="container">
+            <div class="row">
+                <h1>Choose Your Color</h1>
+                <p>Pick out your favourite color and admire then admire your choice.</p>
+
+                <div class="side-blog-content">
+                    <div class="sidebar-blog-content">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <img class="img-responsive" src="{{modelImage}}" alt="blog-image01"/>
+                            </div>
+                        </div><!-- row -->
+                    </div><!-- sidebar-blog-content -->
+                </div>
+
+                <div class="side-blog-content">
+                    <div class="wow zoomIn col-xs-12 col-sm-12 col-md-4 "> <!-- col-xs-12 col-sm-12 col-md-4  -->
+                        <div class="blog-sidebar sidebar">
+                            <div class="sidebar-heading">
+                                Exterior Colors
+                            </div>
+                            <ul>
+                                <li ng-repeat = "color in exteriorColors.colors" style="display: inline-block;background-color:{{color.colorChips.hex}};padding: 0px 10px 30px 10px;" onload="fun();">
+                                    <a href="#" ng-style="{'background-color': '#'+color.colorChips.primary.hex}"></a>
+                                    <div style="align-items: center;padding: 5px 0px 5px 20px;">
+                                        <input type="radio" name={{color.name}} ng-model="selectedColor.exterior" ng-value="color">
+                                    </div>
+                                </li>
+                            </ul>
+                            <div>
+                                <span ng-show="selectedColor.exterior">{{selectedColor.exterior.name}} | </span>
+                                <span ng-show="selectedColor.exterior">{{selectedColor.exterior.price.baseMSRP | currency:'$':0}}</span>
+                            </div>
+                        </div><!-- blog-sidebar -->
+                    </div>
+
+                    <div class="wow zoomIn col-xs-12 col-sm-12 col-md-4 "> <!-- col-xs-12 col-sm-12 col-md-4  -->
+                        <div class="blog-sidebar sidebar">
+                            <div class="sidebar-heading">
+                                Interior Colors
+                            </div>
+                            <ul>
+                                <li ng-repeat = "color in interiorColors.colors" style="display: inline-block;background-color:{{color.colorChips.hex}};padding: 0px 10px 30px 10px;">
+                                    <a href="#" ng-style="{'background-color': '#'+color.colorChips.primary.hex}"></a>
+                                    <div style="align-items: center;padding: 5px 0px 5px 20px;">
+                                        <input type="radio" name={{color.name}} ng-model="selectedColor.interior" ng-value="color">
+                                    </div>
+                                </li>
+                            </ul>
+                            <div>
+                                <span ng-show="selectedColor.interior">{{selectedColor.interior.name}} | </span>
+                                <span ng-show="selectedColor.interior">{{selectedColor.interior.price.baseMSRP | currency:'$':0}}</span>
+                            </div>
+                        </div><!-- blog-sidebar -->
+                    </div>
+                </div>
+
+                <div class="text-right" style="float: left;padding: 30px 100px 30px 400px;">
+                    <button type="button" class="btn btn-danger" ng-click="next();"><i class="fa fa-link"></i>Continue</button>
+                </div>
+
+
+            </div><!-- row -->
+        </div><!-- container -->
+    </section>
+
+    <!-- footer -->
+    <footer >
+        <div class="footer-wrapper section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="wow zoomIn col-xs-12 col-sm-6 col-md-3">
+                        <a href="index.html"><img src="img/footer-logo.png" alt="TechGut"></a>
+                        <p class="footer-content">Lorem ipsum dolor sit amet, consect tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven.</p>
+                    </div><!-- /.col-xs-12 .col-sm-3 .col-md-3 -->
+                    <div class="wow zoomIn col-xs-12 col-sm-3 col-md-3">
+                        <p class="footer-heading">link</p>
+                        <ul class="footermenu">
+                            <li><a href="index.html">about us</a></li>
+                            <li><a href="index.html">services</a></li>
+                            <li><a href="index.html">product</a></li>
+                            <li><a href="index.html">team</a></li>
+                            <li><a href="index.html">blog</a></li>
+                        </ul>
+                    </div><!-- /.col-xs-12 .col-sm-3 .col-md-3 -->
+                    <div class="wow zoomIn col-xs-12 col-sm-6 col-md-3">
+                        <p class="footer-heading">find us</p>
+                        <ul class="footercontact">
+                            <li><i class="flaticon-mainpage"></i><span>address:</span> One TECHGUT loop, 54100</li>
+                            <li><i class="flaticon-phone16"></i><span>phone:</span><a href="tel:88 02 8714612"> +88 02 8714612</a></li>
+                            <li><i class="flaticon-email21"></i><span>e-mail:</span><a href="mailto:support@themerole.com"> support@themerole.com</a></li>
+                            <li><i class="flaticon-world91"></i><span>web:</span><a href="http://themerole.com/"> www.themerole.com</a></li>
+                        </ul>
+                        <i class="flaticon-home78"></i>
+                    </div><!-- /.col-xs-12 .col-sm-3 .col-md-3 -->
+                    <div class="wow zoomIn col-xs-12 col-sm-6 col-md-3">
+                        <p class="footer-heading">recent posts</p>
+                        <ul class="footerblog">
+                            <li><a href="#">The Green Fields of Spring</a> <p>13th Jun 2014</p></li>
+                            <li><a href="#">This is a Video Post</a> <p>18th Nov 2014</p></li>
+                            <li><a href="#">Satisfaction Lies in the Effort</a> <p>13th Jun 2014</p></li>
+                        </ul>
+                    </div><!-- /.col-xs-12 .col-sm-3 .col-md-3 -->
+                </div> <!-- /.row -->
+            </div> <!-- /.container -->
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="wow zoomIn col-xs-12">
+                        <p>© 2015 All rights reserved. <span>techgut</span> theme by <a href="http://themerole.com">themerole</a></p>
+                        <div class="backtop  pull-right">
+                            <i class="fa fa-angle-up back-to-top"></i>
+                        </div>
+                    </div><!-- /.col-xs-12 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </div><!-- /.creditwrapper -->
+    </footer><!-- /Footer -->
+
+    <!-- MMENU  -->
+    <nav id="menu">
+        <ul>
+            <li><a href="index.html">home</a></li>
+            <li><a href="index.html">about us</a></li>
+            <li><a href="index.html">services</a></li>
+            <li><a href="index.html">product</a></li>
+            <li><a href="index.html">team</a></li>
+            <li><a href="index.html">blog</a>
+                <ul>
+                    <li><a href="blog-full-width.html">full width blog</a></li>
+                    <li><a href="#">sidebar blog</a></li>
+                </ul>
+            </li>
+            <li><a href="index.html">contact</a></li>
+        </ul>
+    </nav><!-- /#menu -->
+
+</div><!-- /.main -->
+
+
+
+
+</body>
+</html>

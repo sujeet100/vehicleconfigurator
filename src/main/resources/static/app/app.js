@@ -39,6 +39,14 @@ angular
         templateUrl: 'app/configurator/trimvariant/view/trimvariant.html',
         controller: 'TrimVariantCtrl'
       })
+      .when('/:make/:model/:year/configuration/color', {
+        templateUrl: 'app/configurator/color/view/color.html',
+          controller:'ColorCtrl',
+      })
+      .when('/:make/:model/:year/configuration/accessories', {
+        templateUrl: 'app/configurator/accessories/view/accessories.html',
+          controller:'AccessoriesCtrl',
+      })
       .otherwise({
         redirectTo: '/mazda'
       });
@@ -48,4 +56,5 @@ angular
     $rootScope.api.baseUrl = 'https://api.edmunds.com';
     $rootScope.api.key = 'pnsb29snfy4557kg7qanmu5z';
     $rootScope.imageBaseUrl = 'http://media.ed.edmunds-media.com';
+    $rootScope.vehicleConfiguration = new VehicleConfiguration();
   });

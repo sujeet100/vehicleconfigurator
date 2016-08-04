@@ -2237,7 +2237,7 @@ transition          : all ease 200ms;
 
 
 /*Custom CSS*/
-#powertrain .configuration-steps .slider {
+#powertrain .configuration-steps h1, #powertrain .configuration-steps .slider {
     padding-bottom: 20px;
 }
 
@@ -2250,7 +2250,6 @@ transition          : all ease 200ms;
 #powertrain .header {
     margin-left: 20px;
 }
-
 
 /* Custom CSS */
 
@@ -2355,4 +2354,27 @@ div.ngrs-range-slider .ng-isolate-scope {
 }
 .custom-body {
     margin-bottom: 30px;
+}.blog-sidebar .container .row h1 {
+    padding-top: 30px;
+}
+
+.sidebar-blog-content .img-responsive{
+    width: 450px;
+    height: 300px;
+    align-items: center;
+}
+.sidebar-blog-content{
+    width:700px;
+    height:400px;
+    border:1px solid #000;
+    float:left;
+    padding: 50px 20px 50px 25px;
+}
+
+.blog-sidebar .sidebar{
+    padding-top: 0px;
+    padding-bottom: 50px;
+}
+.blog-sidebar ul {
+    padding: 36px 0;
 }
