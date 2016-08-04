@@ -61,7 +61,7 @@ angular.module('configuratorApp')
                 return variant.styleId = $scope.selectedVariant.styleId;
             });
             $rootScope.vehicleConfiguration.variantStyleId = $rootScope.selectedVariant.styleId;
-            $rootScope.vehicleConfiguration.variantPrice = $rootScope.selectedVariant.price;
+            $rootScope.vehicleConfiguration.setValue('variantPrice', $rootScope.selectedVariant.price);
             $location.path("/" + $scope.make + "/" + $scope.modelNiceName + "/" + $scope.modelYear + "/configuration/color")
         };
 

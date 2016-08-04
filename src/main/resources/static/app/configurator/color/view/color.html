@@ -82,7 +82,7 @@
                                 <li ng-repeat = "color in exteriorColors.colors" style="display: inline-block;background-color:{{color.colorChips.hex}};padding: 0px 10px 30px 10px;" onload="fun();">
                                     <a href="#" ng-style="{'background-color': '#'+color.colorChips.primary.hex}" class="colorChip"></a>
                                     <div style="align-items: center;padding: 5px 0px 5px 20px;">
-                                        <input type="radio" name={{color.name}} ng-model="selectedColor.exterior" ng-value="color">
+                                        <input type="radio" name={{color.name}} ng-model="selectedColor.exterior" ng-value="color" ng-change="updateExteriorColorPrice()">
                                     </div>
                                 </li>
                             </ul>
@@ -91,9 +91,6 @@
                                 <span ng-show="selectedColor.exterior">{{selectedColor.exterior.price.baseMSRP || 0 | currency:'$':0}}</span>
                             </div>
                         </div><!-- blog-sidebar -->
-                    </div>
-
-                    <div class="wow zoomIn col-xs-12 col-sm-12 col-md-4 "> <!-- col-xs-12 col-sm-12 col-md-4  -->
                         <div class="blog-sidebar sidebar">
                             <div class="sidebar-heading">
                                 Interior Colors
@@ -102,7 +99,7 @@
                                 <li ng-repeat = "color in interiorColors.colors" style="display: inline-block;background-color:{{color.colorChips.hex}};padding: 0px 10px 30px 10px;">
                                     <a href="#" ng-style="{'background-color': '#'+color.colorChips.primary.hex}" class="colorChip"></a>
                                     <div style="align-items: center;padding: 5px 0px 5px 20px;">
-                                        <input type="radio" name={{color.name}} ng-model="selectedColor.interior" ng-value="color">
+                                        <input type="radio" name={{color.name}} ng-model="selectedColor.interior" ng-value="color" ng-change="updateInteriorColorPrice();">
                                     </div>
                                 </li>
                             </ul>
@@ -112,6 +109,7 @@
                             </div>
                         </div><!-- blog-sidebar -->
                     </div>
+
                 </div>
 
                 <div class="text-right" style="float: left;padding: 30px 100px 30px 400px;">

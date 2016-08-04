@@ -53,5 +53,13 @@ angular.module('configuratorApp')
             $location.path("/" + $scope.make + "/" + $scope.modelNiceName + "/" + $scope.modelYear + "/configuration/accessories")
         };
 
+        $scope.updateInteriorColorPrice = function() {
+            $rootScope.vehicleConfiguration.setValue('interiorColorPrice', $scope.selectedColor.interior.price ? $scope.selectedColor.interior.price.baseMSRP : 0);
+        };
+
+        $scope.updateExteriorColorPrice = function() {
+            $rootScope.vehicleConfiguration.setValue('exteriorColorPrice', $scope.selectedColor.exterior.price ? $scope.selectedColor.exterior.price.baseMSRP : 0);
+        };
+
     });
 
