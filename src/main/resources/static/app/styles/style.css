@@ -2191,8 +2191,7 @@ transition          : all ease 200ms;
     max-width : 100px;
 }
 
-.blog-sidebar .sidebar-heading{  
-    padding         : 11px 0 8px 0;
+.blog-sidebar .sidebar-heading{
     border-bottom   : 1px solid #ececec;
     position        : relative;
 }

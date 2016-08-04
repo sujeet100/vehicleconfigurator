@@ -49,7 +49,7 @@ angular.module('configuratorApp')
             $rootScope.trimOptions = $rootScope.trimOptions;
             $rootScope.selectedTrim = selectedTrimName;
             $rootScope.vehicleConfiguration.variantName = $scope.modelYear + " "+ $scope.make + " " + $scope.modelNiceName + " " + $rootScope.selectedTrim;
-            $rootScope.vehicleConfiguration.variantPrice = selectedTrim.price;
+            $rootScope.vehicleConfiguration.setValue('variantPrice', selectedTrim.price);
             $location.path("/" + $scope.make + "/" + $scope.modelNiceName + "/" + $scope.modelYear + "/configuration/trimvariant")
         };
 

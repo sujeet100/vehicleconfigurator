@@ -51,12 +51,12 @@
 
 
     <div class="row">
-        <h1>Choose Your Color</h1>
+        <h1>Choose Your Additional Accessories Packages</h1>
         <div class="col-md-3 col-sm-6 hero-feature" ng-repeat="option in options" ng-if="options.length">
-            <div class="thumbnail" ng-click="selectTrim(trim.styleId)" style="height: 200px; margin-top: 40px; overflow: scroll;" ng-style="{ backgroundColor: optionsSelected.values.indexOf(option.id) != -1 ? '#fbe8aa' : 'white'}">
+            <div class="thumbnail" style="height: 200px; margin-top: 40px; overflow: scroll;" ng-style="{ backgroundColor: selectedids.ids.indexOf(option.id) != -1 ? '#fbe8aa' : 'white'}">
 
                 <label for="{{option.id}}">
-                    <input ng-hide="true" type="checkbox" checklist-model="optionsSelected.values" checklist-value="option.id" id="{{option.id}}" style="float:left"/>
+                    <input ng-hide="true" type="checkbox" checklist-model="selectedids.ids" checklist-value="option.id" id="{{option.id}}" style="float:left" checklist-change="selectAccessoriesOptions()"/>
                     <div class="caption" style="cursor: pointer">
                         <h2>{{option.name}}</h2>
                         <h2>{{option.id}}</h2>
