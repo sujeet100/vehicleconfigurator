@@ -2375,7 +2375,6 @@ div.ngrs-range-slider .ng-isolate-scope {
 
 .blog-sidebar .sidebar{
     padding-top: 0px;
-    padding-bottom: 50px;
 }
 .blog-sidebar ul {
     padding: 36px 0;
@@ -2383,4 +2382,19 @@ div.ngrs-range-slider .ng-isolate-scope {
 
 .colorChip {
     padding: 10px 19px !important;
+}
+
+.summary-buttons {
+    margin-bottom: 15px;
+}
+
+.whats-next {
+    padding: 10px;
+    background-color: #EAEAEA;
+}
+.padding-0-10 {
+    padding: 10px 0;
+}
+.btn-social-icon {
+    padding: 5px;
 }
