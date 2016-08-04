@@ -2378,3 +2378,7 @@ div.ngrs-range-slider .ng-isolate-scope {
 .blog-sidebar ul {
     padding: 36px 0;
 }
+
+.colorChip {
+    padding: 10px 19px !important;
+}

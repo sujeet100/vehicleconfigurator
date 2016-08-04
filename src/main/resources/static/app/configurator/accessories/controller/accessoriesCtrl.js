@@ -12,5 +12,7 @@ angular.module('configuratorApp')
                 var options = response.options;
                 $scope.options = options;
             });
+        $scope.optionsSelected = {};
+        $scope.optionsSelected.values = [];
 
     });

@@ -24,7 +24,6 @@ angular.module('configuratorApp')
         .success(function(response){
             $scope.interiorColors = response;
         });
-        console.log(interiorColors)
 
         ColorService.getExteriorColorOptions($rootScope.selectedVariant.styleId)
         .success(function(response){
@@ -51,7 +50,6 @@ angular.module('configuratorApp')
             });
 
         $scope.next = function() {
-            console.log(interiorColors);
             $location.path("/" + $scope.make + "/" + $scope.modelNiceName + "/" + $scope.modelYear + "/configuration/accessories")
         };
 

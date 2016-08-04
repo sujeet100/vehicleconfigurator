@@ -40,7 +40,7 @@ angular.module('configuratorApp')
                 description: "3 year upto 120000 miles Extended Warantee"
             }
         }
-        
+
 
 
         $scope.next = function() {
