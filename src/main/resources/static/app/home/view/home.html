@@ -4,55 +4,11 @@
     <header  class="header-part">
         <div id="home" class="wrapper">
             <!-- Fixed navbar -->
-            <div class="navi navbar-default" role="navigation">
-                <div class="container">
-                    <div class="navbar-header page-scroll">
-                        <a href="#menu">
-                            <button type="button" data-effect="st-effect-1" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                        </a>
-                        <a class="navbar-brand" href="index.html"><h1>{{make}}</h1></a>
-                    </div>
-                    <div id="navbar" class="navbar-collapse collapse pull-right hidden-xs">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li ><a class="page-scroll" href="#home">Home</a></li>
-                            <li> <a class="page-scroll" href="#about">about us</a></li>
-                            <li> <a class="page-scroll" href="#services">services</a></li>
-                            <li> <a class="page-scroll" href="#product">product</a></li>
-                            <li> <a class="page-scroll" href="#team">team</a></li>
-                            <li class="dropdown"> <a class="page-scroll drop dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" href="#blog">blog</a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="blog-full-width.html">full-width Blog</a></li>
-                                    <li><a href="blog-sidebar.html">sidebar blog</a></li>
-                                </ul>
-                            </li>
-
-                            <li><a class="page-scroll" href="#contact">Contact</a></li>
-                            <!-- Search Block -->
-                            <li>
-                                <i class="search fa fa-search search-btn"></i>
-                                <div class="search-open" style="display:none;" >
-                                    <div class="input-group animated fadeInDown" >
-                                        <input type="text" class="form-control" placeholder="Search">
-                                        <span class="input-group-btn">
-                                          <button class="btn-u" type="button">Go</button>
-                                        </span>
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- End Search Block -->
-                        </ul>
-                    </div><!--/.nav-collapse -->
-                </div>
-            </div><!-- End of Nav -->
+            <nav-bar></nav-bar>
         </div>
     </header>
     <!-- OUR TEAM -->
-    <section id="team" class="our-team section-padding">
+    <section id="team" class="our-team section-padding custom-body">
         <div class="container">
             <div class="row">
                 <div class="wow zoomIn col-xs-12 text-center p-padding">
@@ -87,20 +43,9 @@
         </div><!-- container -->
     </section><!-- our team -->
 
+    <div class="clearfix"></div>
     <!-- footer -->
-    <footer >
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="row">
-                    <div class="wow zoomIn col-xs-12">
-                        <p>© 2015 All rights reserved. <span>techgut</span> theme by <a href="http://themerole.com">themerole</a></p>
-                        <div class="backtop  pull-right">
-                            <i class="fa fa-angle-up back-to-top"></i>
-                        </div><!-- /.backtop -->
-                    </div><!-- /.col-xs-12 -->
-                </div><!-- /.row -->
-            </div><!-- /.container -->
-        </div><!-- /.creditwrapper -->
-    </footer><!-- /Footer -->
+    <custom-footer show-button="false" next-click="next()"></custom-footer>
+    <!-- /Footer -->
 
 </div><!-- /.main -->

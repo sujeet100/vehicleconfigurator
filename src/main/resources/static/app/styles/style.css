@@ -1625,7 +1625,6 @@ border          : 1px solid rgba(255,255,255,0.5);
 
 footer{
     background    : #2f2f2f;
-    border-top    : 1px solid #3c3c3c;
 }
 
 footer .footer-heading{
@@ -2334,7 +2333,9 @@ div.ngrs-range-slider .ng-isolate-scope {
     background: url('../images/page-loader.gif') 50% 50% no-repeat;
 }
 .footer-bottom {
-    margin-bottom: 0px;
+    position: fixed;
+    bottom: 0px;
+    width: 100%
 }
 #powertrain-subheader {
     padding-top: 20px;
@@ -2351,4 +2352,7 @@ div.ngrs-range-slider .ng-isolate-scope {
 }
 .icon-holder a:hover {
     background-color: #f54828 !important;
+}
+.custom-body {
+    margin-bottom: 30px;
 }
