@@ -23,10 +23,17 @@ angular.module('configuratorApp')
            var carImages = _.find(images, function(image){
                return image.subType == 'interior';
            });
+           if(!carImage) {
+            carImages = images[0];
+           }
 
            var carImage = _.find(carImages.photoSrcs, function(photoSrc){
                return photoSrc.endsWith("600.jpg") || photoSrc.endsWith("500.jpg");
            });
+
+           if(!carImage) {
+            carImage = carImages.photoSrcs[0];
+           }
 
            $scope.modelImage = $rootScope.imageBaseUrl + carImage;
        });
@@ -44,8 +51,9 @@ angular.module('configuratorApp')
 
       $scope.variantChanged = function() {
         $scope.variant = _.find($rootScope.trimVariants, function(variant){
-            return variant.styleId = $scope.selectedVariant.styleId;
+            return variant.styleId == $scope.selectedVariant.styleId;
         });
+        $rootScope.vehicleConfiguration.setValue('variantPrice', $scope.variant.price);
       };
         $scope.variants = _.map($rootScope.trimVariants, function(variant){
             return {
@@ -58,10 +66,10 @@ angular.module('configuratorApp')
 
         $scope.next = function() {
             $rootScope.selectedVariant = _.find($rootScope.trimVariants, function(variant){
-                return variant.styleId = $scope.selectedVariant.styleId;
+                return variant.styleId == $scope.selectedVariant.styleId;
             });
             $rootScope.vehicleConfiguration.variantStyleId = $rootScope.selectedVariant.styleId;
-            $rootScope.vehicleConfiguration.variantPrice = $rootScope.selectedVariant.price;
+            $rootScope.vehicleConfiguration.setValue('variantPrice', $rootScope.selectedVariant.price);
             $location.path("/" + $scope.make + "/" + $scope.modelNiceName + "/" + $scope.modelYear + "/configuration/color")
         };
 
