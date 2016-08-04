@@ -50,7 +50,6 @@ angular.module('configuratorApp')
             });
 
         $scope.next = function() {
-            console.log(interiorColors);
             $location.path("/" + $scope.make + "/" + $scope.modelNiceName + "/" + $scope.modelYear + "/configuration/accessories")
         };
 
