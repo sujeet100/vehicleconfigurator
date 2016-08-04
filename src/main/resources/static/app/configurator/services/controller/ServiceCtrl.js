@@ -9,6 +9,9 @@
  */
 angular.module('configuratorApp')
     .controller('ServiceCtrl', function ($scope, $routeParams, $rootScope, PowertrainService, $location) {
+        $scope.make = "volkswagen";
+        $scope.modelNiceName = "beetle-convertible";
+        $scope.modelYear = "2015";
 
         $scope.services = {
             service1 : {
@@ -41,12 +44,13 @@ angular.module('configuratorApp')
             }
         }
 
-
+        $scope.selectedService;
+        $scope.selectedWarantee;
 
         $scope.next = function() {
-            $rootScope.trimOptions = _.sortBy($scope.filteredPowertrains, function(powertrain) {
+/*            $rootScope. = _.sortBy($scope.filteredPowertrains, function(powertrain) {
                 return powertrain.price;
-            });
-            $location.path("/" + $scope.make + "/" + $scope.modelNiceName + "/" + $scope.modelYear + "/configuration/trims")
+            });*/
+            $location.path("/" + $scope.make + "/" + $scope.modelNiceName + "/" + $scope.modelYear + "/configuration/summery");
         };
     });

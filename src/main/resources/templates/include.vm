@@ -52,7 +52,7 @@
 <script src="./app/configurator/color/controller/ColorCtrl.js"></script>
 <script src="./app/configurator/color/service/ModelPictureService.js"></script>
 <script src="./app/configurator/services/controller/ServiceCtrl.js"></script>
-
+<script src="./app/configurator/summery/controller/SummeryCtrl.js"></script>
 <script src="./app/configurator/accessories/controller/AccessoriesCtrl.js"></script>
 <script src="./app/configurator/accessories/service/accessoriesService.js"></script>
 <script src="./app/configurator/color/service/ColorService.js"></script>
