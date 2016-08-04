@@ -10,4 +10,5 @@ var Powertrain = function() {
     this.trim;
     this.drivenWheels;
     this.numOfDoors;
+    this.vehicleStyle;
 }
