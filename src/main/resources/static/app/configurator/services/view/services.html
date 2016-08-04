@@ -103,9 +103,9 @@
                              </a>
                             <a href="#" class="list-group-item">
                                 <input type="radio" name="ServiceName" value="Service2">
-                                3 year Service Plan
+                                {{services.service1.description}}
                                 <div Style="float:right;">
-                                    <span name="ServicePrice " value="800" Style="color: black;font-weight: bold;">$800</span>
+                                    <span name="ServicePrice " value={{services.service1.price}} Style="color: black;font-weight: bold;">{{services.service1.price | currency}}</span>
                                     <span title="Sample">
                                         <i class="glyphicon glyphicon-info-sign"></i>
                                     </span>
@@ -113,9 +113,9 @@
                             </a>
                             <a href="#" class="list-group-item">
                                 <input type="radio" name="ServiceName" value="Service3">
-                                5 year Service Plans
+                                {{services.service1.description}}
                                 <div Style="float:right;">
-                                    <span name="ServicePrice " value="600" Style="color: black;font-weight: bold;">$600</span>
+                                    <span name="ServicePrice " value={{services.service2.price}} Style="color: black;font-weight: bold;">{{services.service2.price| currency}}</span>
                                     <span title="Sample">
                                         <i class="glyphicon glyphicon-info-sign"></i>
                                     </span>
@@ -130,11 +130,20 @@
                             </a>
 
                             <a href="#" class="list-group-item">
-                                <input type="radio" name="ServiceName" value="Service3">
-                                1 year upto 60000 miles Extended
-                                Warantee
+                                <input type="radio" ng-model="ServiceName" value="339">
+                                {{warantee.warantee1.description}}
                                 <div Style="float:right;">
-                                    <span name="ServicePrice " value="600" Style="color: black;font-weight: bold;">$339</span>
+                                    <span name="ServicePrice " value="600" Style="color: black;font-weight: bold;">{{warantee.warantee1.price | currency}}</span>
+                                    <span title="Sample">
+                                        <i class="glyphicon glyphicon-info-sign"></i>
+                                    </span>
+                                </div>
+                            </a>
+                            <a href="#" class="list-group-item">
+                                <input type="radio" ng-model="ServiceName" value="668">
+                                {{warantee.warantee2.description}}
+                                <div Style="float:right;">
+                                    <span name="ServicePrice " value="600" Style="color: black;font-weight: bold;">{{warantee.warantee2.price | currency}}</span>
                                     <span title="Sample">
                                         <i class="glyphicon glyphicon-info-sign"></i>
                                     </span>
@@ -142,21 +151,9 @@
                             </a>
                             <a href="#" class="list-group-item">
                                 <input type="radio" name="ServiceName" value="Service3">
-                                2 year upto 100000 miles Extended
-                                Warantee
+                                {{warantee.warantee3.description}}
                                 <div Style="float:right;">
-                                    <span name="ServicePrice " value="600" Style="color: black;font-weight: bold;">$668</span>
-                                    <span title="Sample">
-                                        <i class="glyphicon glyphicon-info-sign"></i>
-                                    </span>
-                                </div>
-                            </a>
-                            <a href="#" class="list-group-item">
-                                <input type="radio" name="ServiceName" value="Service3">
-                                3 year upto 120000 miles Extended
-                                Warantee
-                                <div Style="float:right;">
-                                    <span name="ServicePrice " value="600" Style="color: black;font-weight: bold;">$998</span>
+                                    <span name="ServicePrice " value="600" Style="color: black;font-weight: bold;">{{warantee.warantee3.price | currency}}</span>
                                     <span title="Sample">
                                         <i class="glyphicon glyphicon-info-sign"></i>
                                     </span>

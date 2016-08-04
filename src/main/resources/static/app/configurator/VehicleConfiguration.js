@@ -12,6 +12,5 @@ var VehicleConfiguration = function() {
     this.servicePrice;
     this.warrantyName;
     this.warrantyPrice;
-
-
 }
+
