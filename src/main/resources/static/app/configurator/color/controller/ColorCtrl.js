@@ -8,34 +8,33 @@
  * Controller of the angularappApp
  */
 angular.module('configuratorApp')
-    .controller('ColorCtrl', function ($scope, $routeParams, $rootScope, MakeService , $location) {
+    .controller('ColorCtrl', function ($scope, $routeParams, $rootScope, MakeService , $location, ColorService) {
         $scope.make = $routeParams.make;
         $scope.modelNiceName = $routeParams.model;
         $scope.modelYear = $routeParams.year;
         $scope.interiorColors;
         $scope.exteriorColors;
         $scope.colorsFromColorChips;
+        $scope.selectedColor = {
+            interior: undefined,
+            exterior: undefined
+        };
 
-        var interiorColors = _.find($rootScope.selectedVariant['colors'],function(colorType){
-            return colorType.category == "Interior";
+        ColorService.getInteriorColorOptions($rootScope.selectedVariant.styleId)
+        .success(function(response){
+            $scope.interiorColors = response;
         });
 
-        var exteriorColors = _.find($rootScope.selectedVariant['colors'],function(colorType){
-            return colorType.category == "Exterior";
+        ColorService.getExteriorColorOptions($rootScope.selectedVariant.styleId)
+        .success(function(response){
+            $scope.exteriorColors = response;
         });
 
-        var colorsFromColorChips = _.each(interiorColors.options.colorChips, function(colorChip){
-            console.log(colorChip.hex);
-            return "#" + colorChip.hex;
-        });
 
         $scope.fun = function(e) {
             this.style.color = "#" + this.colorChips.hex;
         };
 
-        $scope.interiorColors = interiorColors;
-        $scope.exteriorColors = exteriorColors;
-        $scope.colorsFromColorChips = colorsFromColorChips;
         //Model Image
         MakeService.getCarImage($rootScope.trimVariants[0].styleId)
             .success(function(images){

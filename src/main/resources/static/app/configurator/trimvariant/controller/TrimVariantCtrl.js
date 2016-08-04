@@ -60,6 +60,8 @@ angular.module('configuratorApp')
             $rootScope.selectedVariant = _.find($rootScope.trimVariants, function(variant){
                 return variant.styleId = $scope.selectedVariant.styleId;
             });
+            $rootScope.vehicleConfiguration.variantStyleId = $rootScope.selectedVariant.styleId;
+            $rootScope.vehicleConfiguration.variantPrice = $rootScope.selectedVariant.price;
             $location.path("/" + $scope.make + "/" + $scope.modelNiceName + "/" + $scope.modelYear + "/configuration/color")
         };
 

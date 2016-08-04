@@ -1,58 +1,4 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-<head>
-    <meta charset="utf-8">
-    <title>TechGut</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
-
-    <!-- Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,300,600,700' rel='stylesheet' type='text/css'>
-
-    <!-- Revolution css -->
-    <link rel="stylesheet" type="text/css" href="vendor/rs-plugin/css/settings.css" media="screen"/>
-    <link rel="stylesheet" href="vendor/rs-plugin/css/extralayer.css">
-
-    <!-- Flat icon css -->
-    <link rel="stylesheet" href="vendor/flat-icon/flaticon.css">
-
-    <!-- Font awesome -->
-    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
-
-    <!-- Owl Carosel css -->
-    <link rel="stylesheet" href="vendor/owl/css/owl.carousel.css">
-    <link rel="stylesheet" href="vendor/owl/css/owl.theme.default.css">
-    <link rel="stylesheet" href="vendor/owl/css/owl.theme.css">
-
-    <!-- mmenu -->
-    <link type="text/css" rel="stylesheet" href="vendor/mmenu/css/jquery.mmenu.css" />
-
-    <!-- Bootstrap css -->
-    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.css">
-
-    <!-- Animate css -->
-    <link rel="stylesheet" href="css/animate.css">
-
-    <!-- Custom Style css -->
-    <link rel="stylesheet" href="css/hover.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
-
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')
-    </script>
-    <![endif]-->
-</head>
 <body>
-
 <div class="main">
     <header  class="header-part">
         <div id="home">
@@ -104,18 +50,6 @@
         </div>
     </header>
 
-    <!--   Start Blog with Sidebar   -->
-
-    <section class="blog-header section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 text-center">
-                    <h1 class="section-title">all blog post</h1>
-                </div><!-- /.col-xs-12 -->
-            </div><!-- /.row -->
-        </div><!-- /.container -->
-    </section><!-- /.blog-header -->
-
 
     <section class="blog-sidebar">
         <div class="container">
@@ -140,13 +74,17 @@
                                 Exterior Colors
                             </div>
                             <ul>
-                                <li ng-repeat = "color in exteriorColors.options" style="display: inline-block;background-color:{{color.colorChips.hex}};padding: 0px 10px 30px 10px;" onload="fun();">
-                                    <a href="#">Color</a>
+                                <li ng-repeat = "color in exteriorColors.colors" style="display: inline-block;background-color:{{color.colorChips.hex}};padding: 0px 10px 30px 10px;" onload="fun();">
+                                    <a href="#" ng-style="{'background-color': '#'+color.colorChips.primary.hex}"></a>
                                     <div style="align-items: center;padding: 5px 0px 5px 20px;">
-                                        <input type="radio" name={{color.name}} value={{color.name}}>
+                                        <input type="radio" name={{color.name}} ng-model="selectedColor.exterior" ng-value="color">
                                     </div>
                                 </li>
                             </ul>
+                            <div>
+                                <span ng-show="selectedColor.exterior">{{selectedColor.exterior.name}} | </span>
+                                <span ng-show="selectedColor.exterior">{{selectedColor.exterior.price.baseMSRP | currency:'$':0}}</span>
+                            </div>
                         </div><!-- blog-sidebar -->
                     </div>
 
@@ -156,13 +94,17 @@
                                 Interior Colors
                             </div>
                             <ul>
-                                <li ng-repeat = "color in interiorColors.options" style="display: inline-block;background-color:{{color.colorChips.hex}};padding: 0px 10px 30px 10px;">
-                                    <a href="#">Color</a>
+                                <li ng-repeat = "color in interiorColors.colors" style="display: inline-block;background-color:{{color.colorChips.hex}};padding: 0px 10px 30px 10px;">
+                                    <a href="#" ng-style="{'background-color': '#'+color.colorChips.primary.hex}"></a>
                                     <div style="align-items: center;padding: 5px 0px 5px 20px;">
-                                        <input type="radio" name={{color.name}} value={{color.name}}>
+                                        <input type="radio" name={{color.name}} ng-model="selectedColor.interior" ng-value="color">
                                     </div>
                                 </li>
                             </ul>
+                            <div>
+                                <span ng-show="selectedColor.interior">{{selectedColor.interior.name}} | </span>
+                                <span ng-show="selectedColor.interior">{{selectedColor.interior.price.baseMSRP | currency:'$':0}}</span>
+                            </div>
                         </div><!-- blog-sidebar -->
                     </div>
                 </div>
@@ -252,57 +194,6 @@
 
 
 
-<!-- jQuery JS -->
-<script src="js/jquery-1.11.1.js"></script>
-
-<!-- Modernizr JS -->
-<script src="js/modernizr-2.6.2.min.js"></script>
-
-<!--Bootatrap JS-->
-<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-
-<!-- REVOLUTION Slider  -->
-<script type="text/javascript" src="vendor/rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
-<script type="text/javascript" src="vendor/rs-plugin/js/jquery.themepunch.revolution.js"></script>
-
-<!-- Shuffle JS -->
-<script src="js/jquery.shuffle.min.js"></script>
-
-
-<!-- mmenu -->
-<script type="text/javascript" src="vendor/mmenu/js/jquery.mmenu.min.js"></script>
-
-<!-- Owl Carosel -->
-<script src="vendor/owl/js/owl.carousel.min.js"></script>
-<script src="js/wow.min.js"></script>
-
-<!-- waypoints JS-->
-<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
-
-<!-- Counterup JS -->
-<script src="js/jquery.counterup.min.js"></script>
-
-<!-- Easing JS -->
-<script src="js/jquery.easing.min.js"></script>
-
-<!-- Smooth Scroll JS -->
-<script src="js/scrolling-nav.js"></script>
-<script src="js/smoothscroll.min.js"></script>
-
-<!-- Custom Script JS -->
-<script src="js/script.js"></script>
-
-<script>
-
-    $(window).on('scroll', function(){
-        if( $(window).scrollTop()>100 ){
-            $('.navbar-default').addClass('navbar-fixed-top');
-        } else {
-            $('.navbar-default').removeClass('navbar-fixed-top');
-        }
-    });
-
-</script>
 
 </body>
 </html>

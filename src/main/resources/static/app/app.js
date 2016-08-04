@@ -52,4 +52,5 @@ angular
     $rootScope.api.baseUrl = 'https://api.edmunds.com';
     $rootScope.api.key = 'pnsb29snfy4557kg7qanmu5z';
     $rootScope.imageBaseUrl = 'http://media.ed.edmunds-media.com';
+    $rootScope.vehicleConfiguration = new VehicleConfiguration();
   });
