@@ -47,6 +47,10 @@ angular
         templateUrl: 'app/configurator/accessories/view/accessories.html',
           controller:'AccessoriesCtrl',
       })
+      .when('/:make/:model/:year/configuration/services', {
+        templateUrl: 'app/configurator/services/view/services.html',
+        controller:'ServiceCtrl',
+      })
       .otherwise({
         redirectTo: '/mazda'
       });

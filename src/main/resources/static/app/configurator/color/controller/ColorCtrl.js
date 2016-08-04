@@ -24,6 +24,7 @@ angular.module('configuratorApp')
         .success(function(response){
             $scope.interiorColors = response;
         });
+        console.log(interiorColors)
 
         ColorService.getExteriorColorOptions($rootScope.selectedVariant.styleId)
         .success(function(response){
@@ -32,7 +33,7 @@ angular.module('configuratorApp')
 
 
         $scope.fun = function(e) {
-            this.style.color = "#" + this.colorChips.hex;
+            this.style.background.color = "#" + this.colorChips.hex;
         };
 
         //Model Image

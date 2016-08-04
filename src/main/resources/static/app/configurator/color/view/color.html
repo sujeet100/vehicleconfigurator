@@ -74,8 +74,8 @@
                                 Exterior Colors
                             </div>
                             <ul>
-                                <li ng-repeat = "color in exteriorColors.colors" style="display: inline-block;background-color:{{color.colorChips.hex}};padding: 0px 10px 30px 10px;" onload="fun();">
-                                    <a href="#" ng-style="{'background-color': '#'+color.colorChips.primary.hex}"></a>
+                                <li ng-repeat = "color in exteriorColors.options" style="display: inline-block;background-color:{{color.colorChips.hex}};padding: 0px 10px 30px 10px;" onload="fun();">
+                                    <a href="#">Color</a>
                                     <div style="align-items: center;padding: 5px 0px 5px 20px;">
                                         <input type="radio" name={{color.name}} ng-model="selectedColor.exterior" ng-value="color">
                                     </div>
