@@ -2388,6 +2388,10 @@ div.ngrs-range-slider .ng-isolate-scope {
     margin-bottom: 15px;
 }
 
+.summary-buttons button {
+    width: 100%;
+}
+
 .whats-next {
     padding: 10px;
     background-color: #EAEAEA;
