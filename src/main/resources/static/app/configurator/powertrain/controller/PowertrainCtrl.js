@@ -30,6 +30,7 @@ angular.module('configuratorApp')
                 powerTrain.trim = style.trim;
                 powerTrain.drivenWheels = style.drivenWheels;
                 powerTrain.numOfDoors = style.numOfDoors;
+                powerTrain.vehicleStyle = style.submodel.niceName;
                 return powerTrain;
             });
             $scope.powertrains = powertrains;

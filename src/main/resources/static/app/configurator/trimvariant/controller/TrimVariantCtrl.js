@@ -41,7 +41,7 @@ angular.module('configuratorApp')
       var getWheelDrive = function(driveName) {
           if(driveName == 'rear wheel drive') {
               return '2WD';
-          } else if (driveName == 'four wheel drive') {
+          } else if (driveName == 'four wheel drive' || driveName == 'all wheel drive') {
               return '4WD';
           } else {
               return '2WD';
@@ -59,7 +59,7 @@ angular.module('configuratorApp')
             return {
                      styleId: variant.styleId,
                      engineName:variant.engine.name,
-                     description: variant.engine.size+"L " + variant.transmission + " " + getWheelDrive(variant.drivenWheels) + " " + variant.numOfDoors + " doors",
+                     description: variant.engine.size+"L " + variant.transmission + " " + getWheelDrive(variant.drivenWheels) + " " + variant.numOfDoors + " doors " + variant.vehicleStyle,
                      price: variant.price
                  }
         });
