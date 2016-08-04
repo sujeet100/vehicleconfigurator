@@ -18,5 +18,6 @@ angular.module('configuratorApp')
             $location.path("/" + $scope.make + "/" + $scope.modelNiceName + "/" + $scope.modelYear + "/configuration/summery");
         }
 
+        $scope.VehicleConfigurationData = $rootScope.vehicleConfiguration;
 
     });

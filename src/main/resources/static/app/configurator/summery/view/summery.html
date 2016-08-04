@@ -75,15 +75,53 @@
                                 Configurations
                             </a>
                             <div>
-                                <a href="#" class="list-group-item">
-                                    {{VehicleConfiguration.variantName}} : {{VehicleConfiguration.variantPrice}}
+                                <div class="list-group-item">
+                                    {{VehicleConfigurationData.variantName}}
                                     <div Style="float:right;">
-                                        <span name="ServicePrice " value={{VehicleConfiguration.variantPrice}} Style="color: black;font-weight: bold;">{{services.service1.price | currency}}</span>
-                                        <span title="Sample">
-                                            <i class="glyphicon glyphicon-info-sign"></i>
-                                        </span>
+                                        <span name="ServicePrice " Style="color: black;font-weight: bold;">{{VehicleConfigurationData.variantPrice}}</span>
+
                                     </div>
-                                </a>
+                                </div>
+                                <div class="list-group-item">
+                                    {{VehicleConfigurationData.exteriorColorName}}
+                                    <div Style="float:right;">
+                                        <span name="ServicePrice " Style="color: black;font-weight: bold;">{{VehicleConfigurationData.exteriorColorPrice}}</span>
+
+                                    </div>
+                                </div>
+                                <div class="list-group-item">
+                                    {{VehicleConfigurationData.interiorColorName}}
+                                    <div Style="float:right;">
+                                        <span name="ServicePrice " Style="color: black;font-weight: bold;">{{VehicleConfigurationData.interiorColorPrice}}</span>
+
+                                    </div>
+                                </div>
+                                <div class="list-group-item">
+                                    {{VehicleConfigurationData.serviceDesription}}
+                                    <div Style="float:right;">
+                                        <span name="ServicePrice " Style="color: black;font-weight: bold;">{{VehicleConfigurationData.servicePrice}}</span>
+
+                                    </div>
+                                </div>
+                                <div class="list-group-item">
+                                    {{VehicleConfigurationData.warrantyDescription}}
+                                    <div Style="float:right;">
+                                        <span name="ServicePrice " Style="color: black;font-weight: bold;">{{VehicleConfigurationData.warrantyPrice}}</span>
+
+                                    </div>
+                                </div>
+                                <div class="list-group-item" ng-repeat="accessory in VehicleConfigurationData.accessories">
+                                    {{accessory.name}}
+                                    <div Style="float:right;">
+                                        <span name="ServicePrice " Style="color: black;font-weight: bold;">{{accessory.price}}</span>
+                                    </div>
+                                </div>
+                                <div class="list-group-item">
+                                    <b>Total:<b/>
+                                    <div Style="float:right;">
+                                        <span name="ServicePrice " Style="color: black;font-weight: bold;">{{VehicleConfigurationData.total}}</span>
+                                    </div>
+                                </div>
                             </div>
                         </div><!-- /.list-group -->
                     </div><!-- sidebar -->

@@ -30,8 +30,5 @@ var VehicleConfiguration = function() {
     this.setValue = function(attr, value) {
         this[attr] = value;
         this.total = this.getPrice();
-
-        console.log(this.total);
-        console.log(this.servicePrice);
     }
 }
