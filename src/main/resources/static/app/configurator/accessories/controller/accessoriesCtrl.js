@@ -12,7 +12,20 @@ angular.module('configuratorApp')
                 var options = response.options;
                 $scope.options = options;
             });
-        $scope.optionsSelected = {};
-        $scope.optionsSelected.values = [];
+        $scope.selectedids = {};
+        $scope.selectedids.ids = [];
 
+        $scope.selectAccessoriesOptions = function(){
+            $scope.optionsSelected = [];
+            _.each($scope.options, function(o){
+                if($scope.selectedids.ids.indexOf(o.id) != -1 && !_.some($scope.optionsSelected, function(e) { return e.id == o.id})){
+                    $scope.optionsSelected.push({
+                        name: o.name,
+                        id: o.id,
+                        price: o.price.baseMSRP
+                    });
+                }
+            });
+            $rootScope.vehicleConfiguration.accessories = $scope.optionsSelected;
+        }
     });
