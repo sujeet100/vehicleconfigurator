@@ -55,10 +55,12 @@ angular.module('configuratorApp')
 
         $scope.updateInteriorColorPrice = function() {
             $rootScope.vehicleConfiguration.setValue('interiorColorPrice', $scope.selectedColor.interior.price ? $scope.selectedColor.interior.price.baseMSRP : 0);
+            $rootScope.vehicleConfiguration.setValue('interiorColorName', $scope.selectedColor.interior.name ? $scope.selectedColor.interior.name : '');
         };
 
         $scope.updateExteriorColorPrice = function() {
             $rootScope.vehicleConfiguration.setValue('exteriorColorPrice', $scope.selectedColor.exterior.price ? $scope.selectedColor.exterior.price.baseMSRP : 0);
+            $rootScope.vehicleConfiguration.setValue('exteriorColorName', $scope.selectedColor.exterior.name ? $scope.selectedColor.exterior.name : '');
         };
 
     });
