@@ -80,17 +80,21 @@
                             <div class="sidebar-heading">
                                 Exterior Colors
                             </div>
-                            <ul>
-                                <li ng-repeat = "color in exteriorColors.colors" style="display: inline-block;background-color:{{color.colorChips.hex}};padding: 0px 10px 10px 10px;">
-                                    <a href="#" ng-style="{'background-color': '#'+color.colorChips.primary.hex}" class="colorChip"></a>
-                                    <div style="align-items: center;padding: 5px 0px 5px 15px;">
-                                        <input type="radio" name={{color.name}} ng-model="selectedColor.exterior" ng-value="color">
-                                    </div>
-                                </li>
-                            </ul>
                             <div>
-                                <span ng-show="selectedColor.exterior">{{selectedColor.exterior.name}} | </span>
-                                <span ng-show="selectedColor.exterior">{{selectedColor.exterior.price.baseMSRP || 0 | currency:'$':0}}</span>
+                                <span ng-show="selectedColor.exterior">{{selectedColor.exterior.name}}: </span>
+                                <span ng-show="selectedColor.exterior"><b ng-if="selectedColor.exterior.price.baseMSRP">{{selectedColor.exterior.price.baseMSRP | currency}}</b></span>
+                                <span ng-show="selectedColor.exterior"><b ng-if="!selectedColor.exterior.price.baseMSRP">$0.00</b></span>
+                            </div>
+
+                            <div style="height: 335px; overflow: scroll">
+                                <ul>
+                                    <li ng-repeat = "color in exteriorColors.colors" style="display: inline-block;background-color:{{color.colorChips.hex}};padding: 0px 10px 10px 10px;">
+                                        <a href="#" ng-style="{'background-color': '#'+color.colorChips.primary.hex}" class="colorChip"></a>
+                                        <div style="align-items: center;padding: 5px 0px 5px 15px;">
+                                            <input type="radio" name={{color.name}} ng-model="selectedColor.exterior" ng-value="color">
+                                        </div>
+                                    </li>
+                                </ul>
                             </div>
                         </div><!-- blog-sidebar -->
                     </div>
@@ -100,17 +104,19 @@
                             <div class="sidebar-heading">
                                 Interior Colors
                             </div>
-                            <ul>
-                                <li ng-repeat = "color in interiorColors.colors" style="display: inline-block;background-color:{{color.colorChips.hex}};padding: 0px 10px 10px 10px;">
-                                    <a href="#" ng-style="{'background-color': '#'+color.colorChips.primary.hex}" class="colorChip"></a>
-                                    <div style="align-items: center;padding: 5px 0px 5px 15px;">
-                                        <input type="radio" name={{color.name}} ng-model="selectedColor.interior" ng-value="color">
-                                    </div>
-                                </li>
-                            </ul>
                             <div>
-                                <span ng-show="selectedColor.interior">{{selectedColor.interior.name}} | </span>
-                                <span ng-show="selectedColor.interior">{{selectedColor.interior.price.baseMSRP || 0 | currency:'$':0}}</span>
+                                <span ng-show="selectedColor.interior">{{selectedColor.interior.name}}: </span>
+                                <span ng-show="selectedColor.interior"><b>{{selectedColor.interior.price.baseMSRP | currency}}</b></span>
+                            </div>
+                            <div style="height: 335px; overflow: scroll">
+                                <ul>
+                                    <li ng-repeat = "color in interiorColors.colors" style="display: inline-block;background-color:{{color.colorChips.hex}};padding: 0px 10px 10px 10px;">
+                                        <a href="#" ng-style="{'background-color': '#'+color.colorChips.primary.hex}" class="colorChip"></a>
+                                        <div style="align-items: center;padding: 5px 0px 5px 15px;">
+                                            <input type="radio" name={{color.name}} ng-model="selectedColor.interior" ng-value="color">
+                                        </div>
+                                    </li>
+                                </ul>
                             </div>
                         </div><!-- blog-sidebar -->
                     </div>
