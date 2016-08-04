@@ -19,7 +19,6 @@ var VehicleConfiguration = function() {
         if(this.accessories.length){
             _.each(this.accessories, function(accessory){
                 accessoriestotal = accessoriestotal + accessory.price;
-                console.log(accessoriestotal);
             })
 
         }
@@ -27,11 +26,7 @@ var VehicleConfiguration = function() {
     }
 
     this.setValue = function(attr, value) {
-        //console.log(attr);
-        //console.log(value);
-        //console.log(_.reduce(this.accessories, function(a, b){ return a.price + b.price}));
         this[attr] = value;
         this.total = this.getPrice();
-        console.log(this.total);
     }
 }
