@@ -9,10 +9,9 @@
  */
 angular.module('configuratorApp')
     .controller('SummeryCtrl', function ($scope, $routeParams, $rootScope, PowertrainService, $location) {
-        $scope.make = "volkswagen";
-        $scope.modelNiceName = "beetle-convertible";
-        $scope.modelYear = "2015";
-
+        $scope.make = $routeParams.make;
+        $scope.modelNiceName = $routeParams.model;
+        $scope.modelYear = $routeParams.year;
 
         $scope.next = function() {
             $location.path("/" + $scope.make + "/" + $scope.modelNiceName + "/" + $scope.modelYear + "/configuration/summery");
