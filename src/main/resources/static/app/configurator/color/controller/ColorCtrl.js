@@ -36,7 +36,7 @@ angular.module('configuratorApp')
         };
 
         //Model Image
-        MakeService.getCarImage($rootScope.trimVariants[0].styleId)
+        MakeService.getCarImage($rootScope.vehicleConfiguration.variantStyleId)
             .success(function(images){
                 var carImages = _.find(images, function(image){
                     return image.subType == 'exterior'&&image.shotTypeAbbreviation == 'FQ';

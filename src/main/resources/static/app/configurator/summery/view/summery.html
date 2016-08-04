@@ -59,78 +59,43 @@
     <section class="blog-sidebar">
         <div class="container">
             <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-8">
-                    <div class="blog-content">
-                        <div class="sidebar-blog-content">
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <img class="img-responsive" src="app/images/tyre-car-fade.jpg" alt="blog-image01"/>
-                                </div>
-                            </div><!-- row -->
-                        </div><!-- sidebar-blog-content -->
-                    </div><!-- blog-content -->
-
-                    <div class="blog-content pagination-content">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="wow zoomIn col-xs-12 col-sm-10 col-sm-offset-2 ">
-                                    <nav>
-                                        <ul class="pagination  pagination-lg">
-                                            <li>
-                                                <a href="#" aria-label="Back">
-                                                    <span aria-hidden="true">&larr; </span><small>Back</small>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" aria-label="Continue Confuiguring">
-                                                    <small>Continue Confuiguring</small><span aria-hidden="true"> &rarr;</span>
-                                                </a>
-                                            </li>
-                                        </ul><!-- pagination -->
-                                    </nav>
-
-                                </div>
-                            </div><!-- row -->
-                        </div><!-- container-fluid -->
-                    </div><!-- /.pagination-content -->
+                <div class="wow zoomIn col-xs-4">
+                    <div class="sidebar-blog-content" Style="width: 360px;height: 500px;border: 1px solid #000;float: left;padding: 100px 0px 50px 0px;">
+                        <div>
+                            <div>
+                                <img class="img-responsive" Style="width: 360px;height: 200px;" src="app/images/tyre-car-fade.jpg" alt="blog-image01"/>
+                            </div>
+                        </div><!-- row -->
+                    </div><!-- sidebar-blog-content -->
                 </div>
-
-                <div class="wow zoomIn col-xs-12 col-sm-12 col-md-4 "> <!-- col-xs-12 col-sm-12 col-md-4  -->
-                    <div class="sidebar">
+                <div class="wow zoomIn col-xs-4"> <!-- col-xs-12 col-sm-12 col-md-4  -->
+                    <div class="sidebar" style="margin:0px;">
                         <div class="list-group">
                             <a href="#" class="list-group-item active">
-                                Choose a Service Contact
-                             </a>
-                            <a href="#" class="list-group-item">
-                                <input type="radio" name=selectedService value="Service2">
-                                {{services.service1.description}}
-                                <div Style="float:right;">
-                                    <span name="ServicePrice " value={{services.service1.price}} Style="color: black;font-weight: bold;">{{services.service1.price | currency}}</span>
-                                    <span title="Sample">
-                                        <i class="glyphicon glyphicon-info-sign"></i>
-                                    </span>
-                                </div>
+                                Configurations
                             </a>
-                            <a href="#" class="list-group-item">
-                                <input type="radio" name="ServiceName" value="Service3">
-                                {{services.service1.description}}
-                                <div Style="float:right;">
-                                    <span name="ServicePrice " value={{services.service2.price}} Style="color: black;font-weight: bold;">{{services.service2.price| currency}}</span>
-                                    <span title="Sample">
-                                        <i class="glyphicon glyphicon-info-sign"></i>
-                                    </span>
-                                </div>
-                            </a>
+                            <div>
+                                <a href="#" class="list-group-item">
+                                    {{VehicleConfiguration.variantName}} : {{VehicleConfiguration.variantPrice}}
+                                    <div Style="float:right;">
+                                        <span name="ServicePrice " value={{VehicleConfiguration.variantPrice}} Style="color: black;font-weight: bold;">{{services.service1.price | currency}}</span>
+                                        <span title="Sample">
+                                            <i class="glyphicon glyphicon-info-sign"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
                         </div><!-- /.list-group -->
                     </div><!-- sidebar -->
-                    <div class="sidebar">
+                </div>
+                <div class="wow zoomIn col-xs-4">
+                    <div class="sidebar" style="margin:0px;">
                         <div class="list-group">
                             <a href="#" class="list-group-item active">
-                                Choose a Warantee
+                                What's Next ?
                             </a>
 
                             <a href="#" class="list-group-item">
-                                <input type="radio" ng-model="ServiceName" value="339">
                                 {{warantee.warantee1.description}}
                                 <div Style="float:right;">
                                     <span name="ServicePrice " value="600" Style="color: black;font-weight: bold;">{{warantee.warantee1.price | currency}}</span>
@@ -140,7 +105,6 @@
                                 </div>
                             </a>
                             <a href="#" class="list-group-item">
-                                <input type="radio" ng-model="ServiceName" value="668">
                                 {{warantee.warantee2.description}}
                                 <div Style="float:right;">
                                     <span name="ServicePrice " value="600" Style="color: black;font-weight: bold;">{{warantee.warantee2.price | currency}}</span>
@@ -150,7 +114,6 @@
                                 </div>
                             </a>
                             <a href="#" class="list-group-item">
-                                <input type="radio" name="ServiceName" value="Service3">
                                 {{warantee.warantee3.description}}
                                 <div Style="float:right;">
                                     <span name="ServicePrice " value="600" Style="color: black;font-weight: bold;">{{warantee.warantee3.price | currency}}</span>
@@ -160,13 +123,14 @@
                                 </div>
                             </a>
                         </div><!-- /.list-group -->
+                    </div>
                 </div>
-            </div><!-- row -->
-        </div><!-- container -->
+                </div><!-- container -->
     </section>
 
+    <!-- footer -->
     <div class="clearfix"></div>
     <!-- footer -->
     <custom-footer show-button="true" next-click="next()"></custom-footer>
-    <!-- /Footer -->
+    <!-- MMENU  -->
 </div><!-- /.main -->
