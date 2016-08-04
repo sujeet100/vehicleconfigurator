@@ -24,7 +24,6 @@ angular.module('configuratorApp')
         .success(function(response){
             $scope.interiorColors = response;
         });
-        console.log(interiorColors)
 
         ColorService.getExteriorColorOptions($rootScope.selectedVariant.styleId)
         .success(function(response){

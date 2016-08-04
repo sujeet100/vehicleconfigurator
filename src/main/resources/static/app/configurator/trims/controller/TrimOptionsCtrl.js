@@ -43,13 +43,15 @@ angular.module('configuratorApp')
         $scope.next = function() {
             var selectedTrim = _.find($scope.trims,function(trim){
                 return trim.styleId == $scope.trimselected.styleid;
-            }).name;
+            });
+            var selectedTrimName = selectedTrim.name;
             $rootScope.trimVariants = _.filter($rootScope.trimOptions, function(option) {
-                return option.trim == selectedTrim;
+                return option.trim == selectedTrimName;
             });
             $rootScope.trimOptions = $rootScope.trimOptions;
-            $rootScope.selectedTrim = selectedTrim;
+            $rootScope.selectedTrim = selectedTrimName;
             $rootScope.vehicleConfiguration.variantName = $scope.modelYear + " "+ $scope.make + " " + $scope.modelNiceName + " " + $rootScope.selectedTrim;
+            $rootScope.vehicleConfiguration.variantPrice = selectedTrim.price;
             $location.path("/" + $scope.make + "/" + $scope.modelNiceName + "/" + $scope.modelYear + "/configuration/trimvariant")
         };
 

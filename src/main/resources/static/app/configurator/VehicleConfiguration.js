@@ -13,5 +13,9 @@ var VehicleConfiguration = function() {
     this.warrantyName;
     this.warrantyPrice;
 
+    this.getPrice = function() {
+        return this.variantPrice || 0 + this.interiorPrice || 0 + this.interiorPrice || 0 + this.exteriorPrice || 0;
+    }
+
 
 }
