@@ -43,6 +43,10 @@ angular
         templateUrl: 'app/configurator/color/view/color.html',
           controller:'ColorCtrl',
       })
+      .when('/:make/:model/:year/configuration/accessories', {
+        templateUrl: 'app/configurator/accessories/view/accessories.html',
+          controller:'AccessoriesCtrl',
+      })
       .otherwise({
         redirectTo: '/mazda'
       });

@@ -49,5 +49,7 @@
 <script src="./app/configurator/trims/TrimOption.js"></script>
 <script src="./app/configurator/color/controller/ColorCtrl.js"></script>
 <script src="./app/configurator/color/service/ModelPictureService.js"></script>
+<script src="./app/configurator/accessories/controller/AccessoriesCtrl.js"></script>
+<script src="./app/configurator/accessories/service/accessoriesService.js"></script>
 <script src="./app/configurator/color/service/ColorService.js"></script>
 <script src="./app/configurator/VehicleConfiguration.js"></script>
