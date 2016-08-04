@@ -2285,3 +2285,27 @@ div.ngrs-range-slider .ng-isolate-scope {
     width: 60%;
 }
 
+.blog-sidebar .container .row h1 {
+    padding-top: 30px;
+}
+
+.sidebar-blog-content .img-responsive{
+    width: 450px;
+    height: 300px;
+    align-items: center;
+}
+.sidebar-blog-content{
+    width:700px;
+    height:400px;
+    border:1px solid #000;
+    float:left;
+    padding: 50px 20px 50px 25px;
+}
+
+.blog-sidebar .sidebar{
+    padding-top: 0px;
+    padding-bottom: 50px;
+}
+.blog-sidebar ul {
+    padding: 36px 0;
+}
