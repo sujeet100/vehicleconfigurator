@@ -57,7 +57,7 @@
     </header>
     <!-- OUR TEAM -->
     <section id="team" class="configuration-steps" ng-if="variants.length > 0">
-        <div class="container">
+        <div class="container custom-body">
             <div class="header">
                 <h1>Style</h1>
                 <h2>{{make}} {{modelNiceName}} {{selectedTrim}}</h2>
@@ -66,28 +66,53 @@
             <div class="clearfix"></div>
 
             <div class="row custom-body">
-                <div class="col-xs-6">
-                    <img class="img-responsive" ng-src="{{modelImage}}" ng-if="modelImage"/>
+                <div class="col-xs-6 custom-body">
+                    <img class="img-responsive" ng-src="{{modelImage}}" ng-if="modelImage" height="400px"/>
                     <img class="img-responsive" ng-src="app/images/default_car.jpeg" ng-if="!modelImage"/>
                 </div>
                 <div class="col-xs-6">
-                    <div class="trim-sidebar">
+                    <!-- <div class="row">
                         <ul class="list-unstyled">
-                            <li ng-repeat="variant in variants" class="list-group-item">
-                                <input type="radio" ng-model="selectedVariant.styleId" ng-change="variantChanged();" value="{{variant.styleId}}">
-                                <spam>{{variant.engineName}}</spam>
-                                <spam>From {{variant.price}}</spam>
-                                <div>{{variant.description}}</div>
+                            <li ng-repeat="variant in variants">
+                                <div class="col-xs-12">
+                                    <div class="row">
+                                        <div class="col-xs-9">
+                                            <input type="radio" ng-model="selectedVariant.styleId" ng-change="variantChanged();" value="{{variant.styleId}}">
+                                            <spam>{{variant.engineName}}</spam>
+                                            <div>{{variant.description}}</div>
+                                        </div>
+                                        <div class="col-xs-3">
+                                            <spam>From ${{variant.price}}</spam>
+                                        </div>
+                                    </div>
+                                </div>
                             </li>
-                        </ul><!-- /.list-group -->
-                    </div><!-- sidebar -->
+                        </ul>
+                    </div> -->
+                    <table class="table table-striped">
+                        <!-- <thead>
+                            <tr>
+                                <th width="70%">Description</th>
+                                <th width="30%">Price</th>
+                            </tr>
+                        </thead> -->
+                        <tbody>
+                            <tr ng-repeat="variant in variants">
+                                <td>
+                                    <input type="radio" ng-model="selectedVariant.styleId" ng-change="variantChanged();" value="{{variant.styleId}}">
+                                    <span style="margin-left: 5px;">{{variant.engineName}}</span>
+                                    <div>{{variant.description}}</div>
+                                </td>
+                                <td>
+                                    From <b>{{variant.price | currency}}</b>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
 
             <div class="clearfix"></div>
-            <div class="pull-right continue">
-                <button type="button" class="btn btn-danger" ng-click="next();">Continue <i class="fa fa-chevron-right"></i></button>
-            </div>
         </div><!-- container -->
     </section><!-- our team -->
 

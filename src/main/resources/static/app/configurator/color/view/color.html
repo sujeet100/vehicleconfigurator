@@ -58,13 +58,15 @@
 
     <section class="blog-sidebar">
         <div class="container">
-            <div class="row">
-                <h1>Choose Your Color</h1>
-                <p>Pick out your favourite color and admire then admire your choice.</p>
+            <div class="row custom-body">
+                <div class="col-xs-12">
+                    <h1>Choose Your Color</h1>
+                    <p>Pick out your favourite color and admire then admire your choice.</p>
+                </div>
 
-                <div class="side-blog-content">
-                    <div class="sidebar-blog-content">
-                        <div class="row">
+                <div class="col-xs-6 custom-body">
+                    <div>
+                        <div class="row custom-body">
                             <div class="col-xs-12">
                                 <img class="img-responsive" src="{{modelImage}}" alt="blog-image01"/>
                             </div>
@@ -72,16 +74,16 @@
                     </div><!-- sidebar-blog-content -->
                 </div>
 
-                <div class="side-blog-content">
-                    <div class="wow zoomIn col-xs-12 col-sm-12 col-md-4 "> <!-- col-xs-12 col-sm-12 col-md-4  -->
-                        <div class="blog-sidebar sidebar">
+                <div class="col-xs-6">
+                    <div class="col-xs-6"> <!-- col-xs-12 col-sm-12 col-md-4  -->
+                        <div class="blog-sidebar">
                             <div class="sidebar-heading">
                                 Exterior Colors
                             </div>
                             <ul>
-                                <li ng-repeat = "color in exteriorColors.colors" style="display: inline-block;background-color:{{color.colorChips.hex}};padding: 0px 10px 30px 10px;" onload="fun();">
+                                <li ng-repeat = "color in exteriorColors.colors" style="display: inline-block;background-color:{{color.colorChips.hex}};padding: 0px 10px 10px 10px;">
                                     <a href="#" ng-style="{'background-color': '#'+color.colorChips.primary.hex}" class="colorChip"></a>
-                                    <div style="align-items: center;padding: 5px 0px 5px 20px;">
+                                    <div style="align-items: center;padding: 5px 0px 5px 15px;">
                                         <input type="radio" name={{color.name}} ng-model="selectedColor.exterior" ng-value="color">
                                     </div>
                                 </li>
@@ -93,15 +95,15 @@
                         </div><!-- blog-sidebar -->
                     </div>
 
-                    <div class="wow zoomIn col-xs-12 col-sm-12 col-md-4 "> <!-- col-xs-12 col-sm-12 col-md-4  -->
-                        <div class="blog-sidebar sidebar">
+                    <div class="col-xs-6"> <!-- col-xs-12 col-sm-12 col-md-4  -->
+                        <div class="blog-sidebar">
                             <div class="sidebar-heading">
                                 Interior Colors
                             </div>
                             <ul>
-                                <li ng-repeat = "color in interiorColors.colors" style="display: inline-block;background-color:{{color.colorChips.hex}};padding: 0px 10px 30px 10px;">
+                                <li ng-repeat = "color in interiorColors.colors" style="display: inline-block;background-color:{{color.colorChips.hex}};padding: 0px 10px 10px 10px;">
                                     <a href="#" ng-style="{'background-color': '#'+color.colorChips.primary.hex}" class="colorChip"></a>
-                                    <div style="align-items: center;padding: 5px 0px 5px 20px;">
+                                    <div style="align-items: center;padding: 5px 0px 5px 15px;">
                                         <input type="radio" name={{color.name}} ng-model="selectedColor.interior" ng-value="color">
                                     </div>
                                 </li>
@@ -114,48 +116,13 @@
                     </div>
                 </div>
 
-                <div class="text-right" style="float: left;padding: 30px 100px 30px 400px;">
-                    <button type="button" class="btn btn-danger" ng-click="next();"><i class="fa fa-link"></i>Continue</button>
-                </div>
-
 
             </div><!-- row -->
         </div><!-- container -->
     </section>
-
     <!-- footer -->
-    <footer >
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="row">
-                    <div class="wow zoomIn col-xs-12">
-                        <p>© 2016 All rights reserved. Powered by edmunds API. <span>techgut</span> theme by <a href="http://themerole.com">themerole</a></p>
-                        <div class="backtop  pull-right">
-                            <i class="fa fa-angle-up back-to-top"></i>
-                        </div>
-                    </div><!-- /.col-xs-12 -->
-                </div><!-- /.row -->
-            </div><!-- /.container -->
-        </div><!-- /.creditwrapper -->
-    </footer><!-- /Footer -->
-
-    <!-- MMENU  -->
-    <nav id="menu">
-        <ul>
-            <li><a href="index.html">home</a></li>
-            <li><a href="index.html">about us</a></li>
-            <li><a href="index.html">services</a></li>
-            <li><a href="index.html">product</a></li>
-            <li><a href="index.html">team</a></li>
-            <li><a href="index.html">blog</a>
-                <ul>
-                    <li><a href="blog-full-width.html">full width blog</a></li>
-                    <li><a href="#">sidebar blog</a></li>
-                </ul>
-            </li>
-            <li><a href="index.html">contact</a></li>
-        </ul>
-    </nav><!-- /#menu -->
+    <custom-footer show-button="true" next-click="next()"></custom-footer>
+    <!-- /Footer -->
 
 </div><!-- /.main -->
 
