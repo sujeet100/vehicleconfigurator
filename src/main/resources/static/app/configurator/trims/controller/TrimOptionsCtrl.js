@@ -22,7 +22,6 @@ angular.module('configuratorApp')
                 TrimoptionService.getStyles(option.styleId)
                     .success(function(response){
                         var equipment = response.equipment;
-                        //console.log(equipment);
                         var stylelist = ['Brake System', 'Drive Type', 'Security', 'Airbags'];
                         _.each(equipment, function(e){
                             if(stylelist.indexOf(e.name) != -1) {
@@ -33,7 +32,6 @@ angular.module('configuratorApp')
                                 })
                             }
                         });
-                        console.log(trimOption.equipmentstyles);
                     })
 
                 $scope.trims.push(trimOption);
