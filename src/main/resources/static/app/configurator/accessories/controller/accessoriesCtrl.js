@@ -26,6 +26,6 @@ angular.module('configuratorApp')
                     });
                 }
             });
-            $rootScope.vehicleConfiguration.accessories = $scope.optionsSelected;
+            $rootScope.vehicleConfiguration.setValue('accessories', $scope.optionsSelected);
         }
     });
