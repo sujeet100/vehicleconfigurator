@@ -56,33 +56,36 @@
 
     <section class="blog-sidebar">
         <div class="container">
-    <div class="row">
-        <h1>Choose Your Additional Accessories Packages</h1>
-        <div class="col-md-3 col-sm-6 hero-feature" ng-repeat="option in options" ng-if="options.length">
-            <div class="thumbnail" style="height: 200px; margin-top: 40px; overflow: scroll;" ng-style="{ backgroundColor: selectedids.ids.indexOf(option.id) != -1 ? '#fbe8aa' : 'white'}">
+            <div class="row">
+                <idv class="col-xs-12">
+                    <h1>Choose Your Additional Accessories Packages</h1>
+                </idv>
+                <div class="col-md-3 col-sm-6 hero-feature" ng-repeat="option in options" ng-if="options.length">
+                    <div class="thumbnail" style="height: 300px; margin-top: 20px; overflow: scroll;" ng-style="{ backgroundColor: selectedids.ids.indexOf(option.id) != -1 ? '#fbe8aa' : 'white'}">
 
-                <label for="{{option.id}}">
-                    <input ng-hide="true" type="checkbox" checklist-model="selectedids.ids" checklist-value="option.id" id="{{option.id}}" style="float:left" checklist-change="selectAccessoriesOptions()"/>
-                    <div class="caption" style="cursor: pointer">
-                        <h2>{{option.name}}</h2>
-                        <h2>{{option.id}}</h2>
-                        <p>{{option.price.baseMSRP | currency}}.</p>
-                        <hr>
-                        <h3>Features:</h3>
-                            <h4>{{option.description}}</h4>
+                        <label for="{{option.id}}">
+                            <input ng-hide="true" type="checkbox" checklist-model="selectedids.ids" checklist-value="option.id" id="{{option.id}}" style="float:left" checklist-change="selectAccessoriesOptions()"/>
+                            <div class="caption" style="cursor: pointer">
+                                <h2>{{option.name}}</h2>
+                                <h2>{{option.id}}</h2>
+                                <p>{{option.price.baseMSRP | currency}}.</p>
+                                <hr>
+                                <h3>Features:</h3>
+                                    <h4>{{option.description}}</h4>
+                            </div>
+                        </label>
+
                     </div>
-                </label>
+                </div>
 
+                <div ng-if="!options.length">
+                    Not Available .....
+                </div>
+                <br />
             </div>
         </div>
-        <br />
-    </div>
-            </div>
-        </section>
+    </section>
 
-    <div ng-if="!options.length">
-        Not Available .....
-    </div>
     <div class="clearfix"></div>
     <div class="pull-right continue">
         <button type="button" class="btn btn-danger" ng-click="next();">Continue <i class="fa fa-chevron-right"></i></button>

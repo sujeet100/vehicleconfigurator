@@ -442,6 +442,9 @@ button.btn-u:active{
     -ms-box-shadow      : 0px 0.866px 1px 0px #D2D1C8;
     -o-box-shadow       : 0px 0.866px 1px 0px #D2D1C8;
     box-shadow          : 0px 0.866px 1px 0px #D2D1C8;
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
 }
 
 ul.nav.navbar-nav>li>.active{
@@ -2289,7 +2292,7 @@ div.ngrs-range-slider .ng-isolate-scope {
     width: 60%;
 }
 
-.bs-wizard {margin-top: 40px;}
+.bs-wizard {margin-top: 120px;}
 
 /*Form Wizard*/
 .bs-wizard {border-bottom: solid 1px #e0e0e0; padding: 0 0 10px 0;}

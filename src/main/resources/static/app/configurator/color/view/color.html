@@ -91,7 +91,7 @@
                                     <li ng-repeat = "color in exteriorColors.colors" style="display: inline-block;background-color:{{color.colorChips.hex}};padding: 0px 10px 10px 10px;">
                                         <a href="#" ng-style="{'background-color': '#'+color.colorChips.primary.hex}" class="colorChip"></a>
                                         <div style="align-items: center;padding: 5px 0px 5px 15px;">
-                                            <input type="radio" name={{color.name}} ng-model="selectedColor.exterior" ng-value="color">
+                                            <input type="radio" name={{color.name}} ng-model="selectedColor.exterior" ng-value="color" ng-change="updateExteriorColorPrice()">
                                         </div>
                                     </li>
                                 </ul>
@@ -113,7 +113,7 @@
                                     <li ng-repeat = "color in interiorColors.colors" style="display: inline-block;background-color:{{color.colorChips.hex}};padding: 0px 10px 10px 10px;">
                                         <a href="#" ng-style="{'background-color': '#'+color.colorChips.primary.hex}" class="colorChip"></a>
                                         <div style="align-items: center;padding: 5px 0px 5px 15px;">
-                                            <input type="radio" name={{color.name}} ng-model="selectedColor.interior" ng-value="color">
+                                            <input type="radio" name={{color.name}} ng-model="selectedColor.interior" ng-value="color" ng-change="updateInteriorColorPrice()">
                                         </div>
                                     </li>
                                 </ul>
