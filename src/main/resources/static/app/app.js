@@ -62,7 +62,9 @@ angular
   .run(function($rootScope){
     $rootScope.api={};
     $rootScope.api.baseUrl = 'https://api.edmunds.com';
-    $rootScope.api.key = 'pnsb29snfy4557kg7qanmu5z';
+    // $rootScope.api.key = 'pnsb29snfy4557kg7qanmu5z';
+    $rootScope.api.key = 'rr6wfcv23kx5vxxjc79v2v8n';
+    
     $rootScope.imageBaseUrl = 'http://media.ed.edmunds-media.com';
     $rootScope.vehicleConfiguration = new VehicleConfiguration();
   });

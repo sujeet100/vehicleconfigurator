@@ -46,7 +46,7 @@ angular.module('configuratorApp')
                     return photoSrc.endsWith("600.jpg") || photoSrc.endsWith("500.jpg");
                 });
 
-                $scope.modelImage = $rootScope.imageBaseUrl + carImage;
+                $rootScope.selectedImage = $scope.modelImage = $rootScope.imageBaseUrl + carImage;
             });
 
         $scope.next = function() {
