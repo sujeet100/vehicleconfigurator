@@ -9,8 +9,10 @@ var VehicleConfiguration = function() {
     this.package;
     this.accessories = [];
     this.serviceName;
+    this.serviceDesription;
     this.servicePrice;
     this.warrantyName;
+    this.warrantyDescription;
     this.warrantyPrice;
     this.total;
 
@@ -22,11 +24,14 @@ var VehicleConfiguration = function() {
             })
 
         }
-        return (this.variantPrice || 0) + (this.interiorColorPrice || 0) + (this.exteriorColorPrice || 0) + (accessoriestotal);
+        return (this.variantPrice || 0) + (this.interiorColorPrice || 0) + (this.exteriorColorPrice || 0) + (accessoriestotal) + (this.warrantyPrice || 0) + (this.servicePrice || 0);
     }
 
     this.setValue = function(attr, value) {
         this[attr] = value;
         this.total = this.getPrice();
+
+        console.log(this.total);
+        console.log(this.servicePrice);
     }
 }

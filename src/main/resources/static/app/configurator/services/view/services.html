@@ -25,26 +25,26 @@
                         <div class="bs-wizard-info text-center">Choose your grade</div>
                     </div>
 
-                    <div class="col-xs-2 bs-wizard-step active"><!-- complete -->
+                    <div class="col-xs-2 bs-wizard-step complete"><!-- complete -->
                         <div class="text-center bs-wizard-stepnum">Style</div>
                         <div class="progress"><div class="progress-bar"></div></div>
                         <a href="#" class="bs-wizard-dot"></a>
                         <div class="bs-wizard-info text-center">Time to narrow down the choice</div>
                     </div>
 
-                    <div class="col-xs-2 bs-wizard-step disabled"><!-- active -->
+                    <div class="col-xs-2 bs-wizard-step complete"><!-- active -->
                         <div class="text-center bs-wizard-stepnum">Color & Interior</div>
                         <div class="progress"><div class="progress-bar"></div></div>
                         <a href="#" class="bs-wizard-dot"></a>
                         <div class="bs-wizard-info text-center">Choose your color</div>
                     </div>
-                    <div class="col-xs-2 bs-wizard-step disabled"><!-- active -->
+                    <div class="col-xs-2 bs-wizard-step complete"><!-- active -->
                         <div class="text-center bs-wizard-stepnum">Accessories</div>
                         <div class="progress"><div class="progress-bar"></div></div>
                         <a href="#" class="bs-wizard-dot"></a>
                         <div class="bs-wizard-info text-center">Finishing touches</div>
                     </div>
-                    <div class="col-xs-2 bs-wizard-step disabled"><!-- active -->
+                    <div class="col-xs-2 bs-wizard-step active"><!-- active -->
                         <div class="text-center bs-wizard-stepnum">Services</div>
                         <div class="progress"><div class="progress-bar"></div></div>
                         <a href="#" class="bs-wizard-dot"></a>
@@ -99,28 +99,20 @@
                     <div class="sidebar">
                         <div class="list-group">
                             <a href="#" class="list-group-item active">
-                                Choose a Service Contact
+                                Choose a Service Contract
                              </a>
-                            <a href="#" class="list-group-item">
-                                <input type="radio" name=selectedService value="Service2">
-                                {{services.service1.description}}
+                            <div class="list-group-item" ng-repeat="service in services">
+                                <input type="checkbox" ng-model="selectedService.name" id="{{service.name}}" ng-true-value="'{{service.name}}'" ng-false-value="" ng-click="updateService()"/>
+                                    {{service.description}}
                                 <div Style="float:right;">
-                                    <span name="ServicePrice " value={{services.service1.price}} Style="color: black;font-weight: bold;">{{services.service1.price | currency}}</span>
+                                    <span name="ServicePrice " Style="color: black;font-weight: bold;">{{service.price | currency}}</span>
                                     <span title="Sample">
                                         <i class="glyphicon glyphicon-info-sign"></i>
                                     </span>
                                 </div>
-                            </a>
-                            <a href="#" class="list-group-item">
-                                <input type="radio" name="ServiceName" value="Service3">
-                                {{services.service1.description}}
-                                <div Style="float:right;">
-                                    <span name="ServicePrice " value={{services.service2.price}} Style="color: black;font-weight: bold;">{{services.service2.price| currency}}</span>
-                                    <span title="Sample">
-                                        <i class="glyphicon glyphicon-info-sign"></i>
-                                    </span>
-                                </div>
-                            </a>
+
+                            </div>
+
                         </div><!-- /.list-group -->
                     </div><!-- sidebar -->
                     <div class="sidebar">
@@ -129,36 +121,18 @@
                                 Choose a Warantee
                             </a>
 
-                            <a href="#" class="list-group-item">
-                                <input type="radio" ng-model="ServiceName" value="339">
-                                {{warantee.warantee1.description}}
+                            <div class="list-group-item" ng-repeat="warantee in warantees">
+                                <input type="checkbox" ng-model="selectedWarantee.name" id="{{warantee.name}}" ng-true-value="'{{warantee.name}}'" ng-false-value="" ng-click="updateWarantee()"/>
+                                {{warantee.description}}
                                 <div Style="float:right;">
-                                    <span name="ServicePrice " value="600" Style="color: black;font-weight: bold;">{{warantee.warantee1.price | currency}}</span>
+                                    <span name="ServicePrice " Style="color: black;font-weight: bold;">{{warantee.price | currency}}</span>
                                     <span title="Sample">
                                         <i class="glyphicon glyphicon-info-sign"></i>
                                     </span>
                                 </div>
-                            </a>
-                            <a href="#" class="list-group-item">
-                                <input type="radio" ng-model="ServiceName" value="668">
-                                {{warantee.warantee2.description}}
-                                <div Style="float:right;">
-                                    <span name="ServicePrice " value="600" Style="color: black;font-weight: bold;">{{warantee.warantee2.price | currency}}</span>
-                                    <span title="Sample">
-                                        <i class="glyphicon glyphicon-info-sign"></i>
-                                    </span>
-                                </div>
-                            </a>
-                            <a href="#" class="list-group-item">
-                                <input type="radio" name="ServiceName" value="Service3">
-                                {{warantee.warantee3.description}}
-                                <div Style="float:right;">
-                                    <span name="ServicePrice " value="600" Style="color: black;font-weight: bold;">{{warantee.warantee3.price | currency}}</span>
-                                    <span title="Sample">
-                                        <i class="glyphicon glyphicon-info-sign"></i>
-                                    </span>
-                                </div>
-                            </a>
+
+                            </div>
+
                         </div><!-- /.list-group -->
                 </div>
             </div><!-- row -->
