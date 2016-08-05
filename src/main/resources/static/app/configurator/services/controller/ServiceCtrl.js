@@ -9,9 +9,9 @@
  */
 angular.module('configuratorApp')
     .controller('ServiceCtrl', function ($scope, $routeParams, $rootScope, PowertrainService, $location) {
-        $scope.make = "volkswagen";
-        $scope.modelNiceName = "beetle-convertible";
-        $scope.modelYear = "2015";
+        $scope.make = $routeParams.make;
+        $scope.modelNiceName = $routeParams.model;
+        $scope.modelYear = $routeParams.year;
 
         $scope.services = [
             {

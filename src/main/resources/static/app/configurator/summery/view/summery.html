@@ -25,26 +25,26 @@
                         <div class="bs-wizard-info text-center">Choose your grade</div>
                     </div>
 
-                    <div class="col-xs-2 bs-wizard-step active"><!-- complete -->
+                    <div class="col-xs-2 bs-wizard-step complete"><!-- complete -->
                         <div class="text-center bs-wizard-stepnum">Style</div>
                         <div class="progress"><div class="progress-bar"></div></div>
                         <a href="#" class="bs-wizard-dot"></a>
                         <div class="bs-wizard-info text-center">Time to narrow down the choice</div>
                     </div>
 
-                    <div class="col-xs-2 bs-wizard-step disabled"><!-- active -->
+                    <div class="col-xs-2 bs-wizard-step complete"><!-- active -->
                         <div class="text-center bs-wizard-stepnum">Color & Interior</div>
                         <div class="progress"><div class="progress-bar"></div></div>
                         <a href="#" class="bs-wizard-dot"></a>
                         <div class="bs-wizard-info text-center">Choose your color</div>
                     </div>
-                    <div class="col-xs-2 bs-wizard-step disabled"><!-- active -->
+                    <div class="col-xs-2 bs-wizard-step complete"><!-- active -->
                         <div class="text-center bs-wizard-stepnum">Accessories</div>
                         <div class="progress"><div class="progress-bar"></div></div>
                         <a href="#" class="bs-wizard-dot"></a>
                         <div class="bs-wizard-info text-center">Finishing touches</div>
                     </div>
-                    <div class="col-xs-2 bs-wizard-step disabled"><!-- active -->
+                    <div class="col-xs-2 bs-wizard-step complete"><!-- active -->
                         <div class="text-center bs-wizard-stepnum">Services</div>
                         <div class="progress"><div class="progress-bar"></div></div>
                         <a href="#" class="bs-wizard-dot"></a>
@@ -59,116 +59,94 @@
     <section class="blog-sidebar">
         <div class="container">
             <div class="row">
-                <div class="wow zoomIn col-xs-4">
-                    <div class="sidebar-blog-content" Style="width: 360px;height: 500px;border: 1px solid #000;float: left;padding: 100px 0px 50px 0px;">
-                        <div>
-                            <div>
-                                <img class="img-responsive" Style="width: 360px;height: 200px;" ng-src="{{selectedImage}}" alt="blog-image01"/>
-                            </div>
-                        </div><!-- row -->
-                    </div><!-- sidebar-blog-content -->
+                <div class="col-xs-4">
+                    <img class="img-responsive" Style="width: 400px;height: 350px;" ng-src="{{selectedImage}}" alt="blog-image01"/>
                 </div>
-                <div class="wow zoomIn col-xs-4"> <!-- col-xs-12 col-sm-12 col-md-4  -->
-                    <div class="sidebar" style="margin:0px;">
-                        <div class="list-group">
-                            <a href="#" class="list-group-item active">
-                                Configurations
-                            </a>
-                            <div>
-                                <div class="list-group-item">
-                                    {{VehicleConfigurationData.variantName}}
-                                    <div Style="float:right;">
-                                        <span name="ServicePrice " Style="color: black;font-weight: bold;">{{VehicleConfigurationData.variantPrice}}</span>
-
-                                    </div>
-                                </div>
-                                <div class="list-group-item">
-                                    {{VehicleConfigurationData.exteriorColorName}}
-                                    <div Style="float:right;">
-                                        <span name="ServicePrice " Style="color: black;font-weight: bold;">{{VehicleConfigurationData.exteriorColorPrice}}</span>
-
-                                    </div>
-                                </div>
-                                <div class="list-group-item">
-                                    {{VehicleConfigurationData.interiorColorName}}
-                                    <div Style="float:right;">
-                                        <span name="ServicePrice " Style="color: black;font-weight: bold;">{{VehicleConfigurationData.interiorColorPrice}}</span>
-
-                                    </div>
-                                </div>
-                                <div class="list-group-item">
-                                    {{VehicleConfigurationData.serviceDesription}}
-                                    <div Style="float:right;">
-                                        <span name="ServicePrice " Style="color: black;font-weight: bold;">{{VehicleConfigurationData.servicePrice}}</span>
-
-                                    </div>
-                                </div>
-                                <div class="list-group-item">
-                                    {{VehicleConfigurationData.warrantyDescription}}
-                                    <div Style="float:right;">
-                                        <span name="ServicePrice " Style="color: black;font-weight: bold;">{{VehicleConfigurationData.warrantyPrice}}</span>
-
-                                    </div>
-                                </div>
-                                <div class="list-group-item" ng-repeat="accessory in VehicleConfigurationData.accessories">
-                                    {{accessory.name}}
-                                    <div Style="float:right;">
-                                        <span name="ServicePrice " Style="color: black;font-weight: bold;">{{accessory.price}}</span>
-                                    </div>
-                                </div>
-                                <div class="list-group-item">
-                                    <b>Total:<b/>
-                                    <div Style="float:right;">
-                                        <span name="ServicePrice " Style="color: black;font-weight: bold;">{{VehicleConfigurationData.total}}</span>
-                                    </div>
+                <div class="col-xs-5"> <!-- col-xs-12 col-sm-12 col-md-4  -->
+                    <div class="whats-next" style="overflow-y: scroll; height: 350px;">
+                        <a href="#" class="list-group-item active">
+                            Configurations
+                        </a>
+                        <div Style="color: black">
+                            <div class="padding-0-10" ng-if="VehicleConfigurationData.variantName">
+                                {{VehicleConfigurationData.variantName}}
+                                <div Style="float:right;">
+                                    <span name="ServicePrice " Style="font-weight: bold;">{{VehicleConfigurationData.variantPrice | currency:'$':0}}</span>
                                 </div>
                             </div>
-                        </div><!-- /.list-group -->
-                    </div><!-- sidebar -->
+                            <div class="padding-0-10" ng-if="VehicleConfigurationData.exteriorColorName">
+                                {{VehicleConfigurationData.exteriorColorName}}
+                                <div Style="float:right;">
+                                    <span name="ServicePrice " Style="font-weight: bold;">{{VehicleConfigurationData.exteriorColorPrice | currency:'$':0}}</span>
+                                </div>
+                            </div>
+                            <div class="padding-0-10" ng-if="VehicleConfigurationData.interiorColorName">
+                                {{VehicleConfigurationData.interiorColorName}}
+                                <div Style="float:right;">
+                                    <span name="ServicePrice " Style="font-weight: bold;">{{VehicleConfigurationData.interiorColorPrice | currency:'$':0}}</span>
+                                </div>
+                            </div>
+                            <div class="padding-0-10" ng-if="VehicleConfigurationData.serviceDesription">
+                                {{VehicleConfigurationData.serviceDesription}}
+                                <div Style="float:right;">
+                                    <span name="ServicePrice " Style="font-weight: bold;">{{VehicleConfigurationData.servicePrice | currency:'$':0}}</span>
+                                </div>
+                            </div>
+                            <div class="padding-0-10" ng-if="VehicleConfigurationData.warrantyPrice > 0">
+                                {{VehicleConfigurationData.warrantyDescription}}
+                                <div Style="float:right;">
+                                    <span name="ServicePrice " Style="font-weight: bold;">{{VehicleConfigurationData.warrantyPrice | currency:'$':0}}</span>
+                                </div>
+                            </div>
+                            <div class="padding-0-10" ng-repeat="accessory in VehicleConfigurationData.accessories" ng-if="VehicleConfigurationData.accessories.length > 0">
+                                {{accessory.name}}
+                                <div Style="float:right;">
+                                    <span name="ServicePrice " Style="font-weight: bold;">{{accessory.price | currency:'$':0}}</span>
+                                </div>
+                            </div>
+                            <hr style="background-color: black;height: 1px;padding: 0;">
+                            <div class="padding-0-10">
+                                <b>Total:<b/>
+                                <div Style="float:right;">
+                                    <span name="ServicePrice " Style="font-weight: bold;">{{VehicleConfigurationData.total | currency:'$':0}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- /.list-group -->
                 </div>
-                <div class="wow zoomIn col-xs-4">
-                    <div class="sidebar" style="margin:0px;">
-                        <div class="list-group">
-                            <a href="#" class="list-group-item active">
-                                What's Next ?
-                            </a>
+                <div class="col-xs-3">
+                    <div class="whats-next">
+                        <div class="summary-buttons"> <h2>What's Next ?</h2></div>
 
-                            <a href="#" class="list-group-item">
-                                {{warantee.warantee1.description}}
-                                <div Style="float:right;">
-                                    <span name="ServicePrice " value="600" Style="color: black;font-weight: bold;">{{warantee.warantee1.price | currency}}</span>
-                                    <span title="Sample">
-                                        <i class="glyphicon glyphicon-info-sign"></i>
-                                    </span>
-                                </div>
-                            </a>
-                            <a href="#" class="list-group-item">
-                                {{warantee.warantee2.description}}
-                                <div Style="float:right;">
-                                    <span name="ServicePrice " value="600" Style="color: black;font-weight: bold;">{{warantee.warantee2.price | currency}}</span>
-                                    <span title="Sample">
-                                        <i class="glyphicon glyphicon-info-sign"></i>
-                                    </span>
-                                </div>
-                            </a>
-                            <a href="#" class="list-group-item">
-                                {{warantee.warantee3.description}}
-                                <div Style="float:right;">
-                                    <span name="ServicePrice " value="600" Style="color: black;font-weight: bold;">{{warantee.warantee3.price | currency}}</span>
-                                    <span title="Sample">
-                                        <i class="glyphicon glyphicon-info-sign"></i>
-                                    </span>
-                                </div>
-                            </a>
-                        </div><!-- /.list-group -->
-                    </div>
+                        <div class="summary-buttons">
+                            <button class="btn btn-warning btn-lg">Request Quote</button>
+                        </div>
+                        
+                        <div class="summary-buttons">
+                            <button class="btn btn-warning btn-lg">Save Configuration Settings</button>
+                        </div>
+                        
+                        <div class="summary-buttons">
+                            <button class="btn btn-warning btn-lg">Request For Test Drive</button>
+                        </div>
+                        
+                        <div class="summary-buttons">
+                            <div>Share on Social Media</div>
+                            <div>
+                                <a class="btn btn-social-icon btn-facebook"><span class="fa fa-facebook"></span></a>
+                                <a class="btn btn-social-icon btn-linkedin"><span class="fa fa-linkedin"></span></a>
+                                <a class="btn btn-social-icon btn-twitter"><span class="fa fa-twitter"></span></a>
+                            </div>
+                        </div>
+                    </div><!-- /.list-group -->
                 </div>
-                </div><!-- container -->
+            </div>
+        </div>
     </section>
 
     <!-- footer -->
     <div class="clearfix"></div>
     <!-- footer -->
-    <custom-footer show-button="true" next-click="next()"></custom-footer>
+    <custom-footer show-button="false" next-click="next()"></custom-footer>
     <!-- MMENU  -->
 </div><!-- /.main -->
